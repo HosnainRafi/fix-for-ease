@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Our Team — Fix For Ease</title>
+<meta name="description" content="Meet the team behind Fix For Ease — passionate editors dedicated to bringing your wedding story to life.">
+<link rel="icon" type="image/png" sizes="64x64" href="/static/images/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@300;400;600;800&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --ink:#0e0d0c;--paper:#f3efe8;--charcoal:#141211;--stone:#8a8178;
+  --accent:#2e7da6;--brand-sky:#79aecd;--white:#fff;
+  --mono:'IBM Plex Mono',monospace;
+}
+html{scroll-behavior:smooth;overflow-x:hidden}
+body{background:var(--charcoal);color:var(--white);font-family:'Inter',sans-serif;overflow-x:hidden;min-height:100vh}
+a{color:inherit;text-decoration:none}
+img{display:block;max-width:100%}
+
+/* ── NAV ── */
+.ot-nav{position:fixed;z-index:50;top:14px;left:50%;width:min(94%,1440px);height:72px;transform:translateX(-50%);padding:8px 12px 8px 22px;display:flex;align-items:center;justify-content:space-between;background:rgba(255,255,255,0.08);backdrop-filter:blur(64px) saturate(200%) brightness(1.08);-webkit-backdrop-filter:blur(64px) saturate(200%) brightness(1.08);border:1px solid rgba(255,255,255,0.22);border-radius:999px;box-shadow:inset 0 1.5px 0 rgba(255,255,255,0.45),0 8px 40px rgba(0,0,0,0.22);transition:background .35s}
+.ot-nav-brand img{width:90px;height:46px;object-fit:contain}
+.ot-nav-links{display:flex;gap:30px;text-transform:uppercase;font:12px var(--mono);letter-spacing:.1em;color:rgba(255,255,255,0.8)}
+.ot-nav-links a:hover{color:#fff}
+.ot-nav-links a.active{color:#fff;border-bottom:1px solid var(--accent)}
+.ot-nav-cta{display:inline-flex;align-items:center;gap:14px;border-radius:999px;background:rgba(10,9,15,0.88);color:white;border:1px solid rgba(255,255,255,0.15);padding:12px 18px;text-transform:uppercase;font:12px var(--mono);letter-spacing:.08em;transition:.3s}
+.ot-nav-cta:hover{background:var(--accent)}
+
+/* ── HERO ── */
+.ot-hero{min-height:48vh;display:flex;flex-direction:column;justify-content:flex-end;padding:130px 5vw 64px;position:relative;overflow:hidden;background:linear-gradient(160deg,#0a0d12 0%,var(--charcoal) 100%)}
+.ot-hero::before{content:"";position:absolute;inset:0;background:radial-gradient(ellipse at 70% 0%,rgba(46,125,166,0.15),transparent 55%)}
+.ot-hero-eyebrow{font:11px var(--mono);letter-spacing:.2em;text-transform:uppercase;color:var(--brand-sky);margin-bottom:18px;display:flex;align-items:center;gap:12px}
+.ot-hero-eyebrow span{width:32px;height:1px;background:var(--brand-sky);display:inline-block}
+.ot-hero h1{font-family:'Inter Tight',sans-serif;font-size:clamp(52px,8vw,120px);font-weight:800;line-height:.88;letter-spacing:-.06em;margin-bottom:24px}
+.ot-hero h1 em{color:transparent;-webkit-text-stroke:1px rgba(255,255,255,0.35);font-style:normal}
+.ot-hero p{color:rgba(255,255,255,0.5);font-size:16px;max-width:500px;line-height:1.65}
+
+/* ── FOUNDER ── */
+.ot-founder{padding:100px 5vw;max-width:1440px;margin:0 auto;display:grid;grid-template-columns:5fr 7fr;gap:80px;align-items:center}
+.ot-founder-img-wrap{position:relative}
+.ot-founder-img{width:100%;aspect-ratio:3/4;object-fit:cover;border-radius:16px;filter:saturate(.92)}
+.ot-founder-img-placeholder{width:100%;aspect-ratio:3/4;border-radius:16px;background:linear-gradient(160deg,#1e2a34,#0d1820);display:flex;align-items:center;justify-content:center;color:rgba(255,255,255,0.12);font:13px var(--mono);letter-spacing:.1em;text-transform:uppercase}
+.ot-founder-img-accent{position:absolute;bottom:-20px;right:-20px;width:60%;height:60%;border:1.5px solid rgba(46,125,166,0.35);border-radius:12px;pointer-events:none;z-index:-1}
+.ot-founder-content{}
+.ot-founder-eyebrow{font:11px var(--mono);letter-spacing:.2em;text-transform:uppercase;color:var(--accent);margin-bottom:16px;display:flex;align-items:center;gap:10px}
+.ot-founder-eyebrow span{width:24px;height:1px;background:var(--accent);display:inline-block}
+.ot-founder-name{font-family:'Inter Tight',sans-serif;font-size:clamp(36px,4vw,56px);font-weight:800;line-height:1;letter-spacing:-.04em;margin-bottom:10px}
+.ot-founder-title{font:14px var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--brand-sky);margin-bottom:32px}
+.ot-founder-bio{color:rgba(255,255,255,0.62);font-size:16px;line-height:1.8;margin-bottom:36px}
+.ot-founder-bio p+p{margin-top:16px}
+.ot-founder-quote{border-left:2px solid var(--accent);padding:16px 24px;color:rgba(255,255,255,0.8);font-family:'Inter Tight',sans-serif;font-size:18px;font-weight:600;font-style:italic;line-height:1.5;background:rgba(46,125,166,0.06);border-radius:0 8px 8px 0}
+.ot-founder-stats{display:flex;gap:40px;margin-top:36px}
+.ot-stat-val{font-family:'Inter Tight',sans-serif;font-size:32px;font-weight:800;color:#fff;line-height:1}
+.ot-stat-label{font:10px var(--mono);letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,0.4);margin-top:4px}
+
+/* ── MANAGEMENT ── */
+.ot-mgmt{padding:70px 5vw 80px;max-width:1440px;margin:0 auto}
+.ot-mgmt-header{margin-bottom:44px}
+.ot-mgmt-eyebrow{font:11px var(--mono);letter-spacing:.2em;text-transform:uppercase;color:var(--accent);margin-bottom:14px;display:flex;align-items:center;gap:10px}
+.ot-mgmt-eyebrow span{width:24px;height:1px;background:var(--accent);display:inline-block}
+.ot-mgmt-title{font-family:'Inter Tight',sans-serif;font-size:clamp(28px,3.5vw,44px);font-weight:800;line-height:.95;letter-spacing:-.04em}
+.ot-mgmt-title em{color:transparent;-webkit-text-stroke:1px rgba(255,255,255,0.3);font-style:normal}
+.ot-mgmt-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:16px}
+.ot-mgmt-card{background:#1a1714;border-radius:14px;overflow:hidden;transition:transform .4s cubic-bezier(.16,1,.3,1)}
+.ot-mgmt-card:hover{transform:translateY(-4px)}
+.ot-mgmt-photo{width:100%;aspect-ratio:1/1;object-fit:cover;object-position:top;filter:saturate(.88) brightness(.95);display:block;transition:.4s}
+.ot-mgmt-card:hover .ot-mgmt-photo{filter:saturate(1) brightness(1);transform:scale(1.04)}
+.ot-mgmt-photo-placeholder{width:100%;aspect-ratio:1/1;background:linear-gradient(160deg,#1e2a34,#0d1820);display:flex;align-items:center;justify-content:center;color:rgba(255,255,255,0.1);font:11px var(--mono);text-transform:uppercase}
+.ot-mgmt-body{padding:14px 16px 16px}
+.ot-mgmt-name{font-family:'Inter Tight',sans-serif;font-size:15px;font-weight:800;color:#fff;margin-bottom:3px;line-height:1.2}
+.ot-mgmt-role{font:9px var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--brand-sky);margin-bottom:10px}
+.ot-mgmt-quote{border-left:2px solid var(--accent);padding:8px 10px;color:rgba(255,255,255,0.65);font-size:11px;font-style:italic;line-height:1.5;background:rgba(46,125,166,0.06);border-radius:0 5px 5px 0;margin-bottom:10px}
+.ot-mgmt-exp{display:inline-flex;align-items:center;gap:5px;font:9px var(--mono);letter-spacing:.06em;color:rgba(255,255,255,0.35);background:rgba(255,255,255,0.05);padding:4px 8px;border-radius:4px}
+.ot-mgmt-exp::before{content:"◆";font-size:5px;color:var(--accent)}
+
+/* ── TEAM (editors compact style) ── */
+.ot-team-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+
+/* ── DIVIDER ── */
+.ot-divider{max-width:1440px;margin:0 auto;padding:0 5vw}
+.ot-divider hr{border:none;border-top:1px solid rgba(255,255,255,0.08)}
+
+/* ── TEAM ── */
+.ot-team{padding:80px 5vw 100px;max-width:1440px;margin:0 auto}
+.ot-team-header{margin-bottom:48px}
+.ot-team-eyebrow{font:11px var(--mono);letter-spacing:.2em;text-transform:uppercase;color:var(--accent);margin-bottom:14px;display:flex;align-items:center;gap:10px}
+.ot-team-eyebrow span{width:24px;height:1px;background:var(--accent);display:inline-block}
+.ot-team-title{font-family:'Inter Tight',sans-serif;font-size:clamp(32px,4vw,52px);font-weight:800;line-height:.95;letter-spacing:-.04em}
+.ot-team-title em{color:transparent;-webkit-text-stroke:1px rgba(255,255,255,0.3);font-style:normal}
+.ot-member-card{display:flex;align-items:center;gap:16px;background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);border-radius:14px;padding:16px 20px;transition:background .3s,border-color .3s}
+.ot-member-card:hover{background:rgba(255,255,255,0.07);border-color:rgba(46,125,166,0.25)}
+.ot-member-photo{width:56px;height:56px;border-radius:50%;object-fit:cover;filter:saturate(.85);flex-shrink:0;display:block;transition:.3s}
+.ot-member-card:hover .ot-member-photo{filter:saturate(1)}
+.ot-member-photo-placeholder{width:56px;height:56px;border-radius:50%;background:linear-gradient(135deg,#1e2a34,#111a22);display:flex;align-items:center;justify-content:center;color:rgba(255,255,255,0.1);font:9px var(--mono);letter-spacing:.06em;text-transform:uppercase;flex-shrink:0}
+.ot-member-info{}
+.ot-member-name{font-family:'Inter Tight',sans-serif;font-size:15px;font-weight:700;color:#fff;margin-bottom:4px}
+.ot-member-role{font:10px var(--mono);letter-spacing:.1em;text-transform:uppercase;color:var(--brand-sky);margin-bottom:6px}
+.ot-member-exp{display:inline-flex;align-items:center;gap:5px;font:10px var(--mono);letter-spacing:.06em;color:rgba(255,255,255,0.35);background:rgba(255,255,255,0.05);padding:4px 8px;border-radius:4px}
+.ot-member-exp::before{content:"◆";font-size:5px;color:var(--accent)}
+
+/* empty state */
+.ot-empty{grid-column:1/-1;text-align:center;padding:80px 20px;color:rgba(255,255,255,0.2);font:13px var(--mono);letter-spacing:.1em;text-transform:uppercase}
+
+/* ── FOOTER ── */
+.ot-footer{padding:50px 5vw 28px;background:#0a0908;border-top:1px solid rgba(255,255,255,0.08);display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:20px}
+.ot-footer-text{font:11px var(--mono);letter-spacing:.08em;color:rgba(255,255,255,0.28);text-transform:uppercase}
+.ot-footer-link{font:11px var(--mono);letter-spacing:.08em;color:rgba(255,255,255,0.4);text-transform:uppercase;border:1px solid rgba(255,255,255,0.12);padding:8px 16px;border-radius:999px;transition:.2s}
+.ot-footer-link:hover{border-color:rgba(255,255,255,0.35);color:#fff}
+
+@media(max-width:1200px){
+  .ot-mgmt-grid{grid-template-columns:repeat(4,1fr)}
+}
+@media(max-width:1100px){
+  .ot-team-grid{grid-template-columns:repeat(2,1fr)}
+  .ot-mgmt-grid{grid-template-columns:repeat(3,1fr)}
+}
+@media(max-width:900px){
+  .ot-founder{grid-template-columns:1fr;gap:48px}
+  .ot-founder-img-accent{display:none}
+  .ot-team-grid{grid-template-columns:1fr}
+  .ot-mgmt-grid{grid-template-columns:repeat(2,1fr)}
+  .ot-nav-links{display:none}
+  .ot-toggle{order:1}
+  .ot-nav-brand{order:2;flex:1;display:flex;justify-content:center}
+  .ot-nav-cta{order:3;display:inline-flex;font-size:10px;padding:10px 14px;gap:8px}
+}
+@media(max-width:600px){
+  .ot-nav{height:62px;top:8px;width:calc(100% - 16px);padding:6px 8px 6px 14px}
+  .ot-nav-brand img{width:72px}
+  .ot-nav-cta{font-size:9px;padding:9px 12px;gap:8px}
+  .ot-hero{padding:110px 20px 52px;min-height:42vh}
+  .ot-founder{padding:64px 20px}
+  .ot-founder-stats{gap:24px}
+  .ot-mgmt{padding:48px 20px 60px}
+  .ot-mgmt-grid{grid-template-columns:repeat(2,1fr);gap:12px}
+  .ot-team{padding:56px 20px 80px}
+  .ot-team-grid{grid-template-columns:1fr;gap:12px}
+}
+
+/* mobile hamburger */
+.ot-toggle{display:none;flex-direction:column;justify-content:center;align-items:center;gap:5px;width:40px;height:40px;border:1px solid rgba(255,255,255,0.28);border-radius:50%;background:rgba(255,255,255,0.07);cursor:pointer;flex-shrink:0}
+.ot-toggle span{width:15px;height:2px;background:rgba(255,255,255,0.88);transition:.3s;display:block}
+.ot-nav.menu-open .ot-toggle span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.ot-nav.menu-open .ot-toggle span:nth-child(2){opacity:0}
+.ot-nav.menu-open .ot-toggle span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+.ot-mob-nav{display:flex;flex-direction:column;gap:4px;position:fixed;z-index:45;top:80px;left:50%;transform:translateX(-50%) translateY(-10px);width:min(94%,1440px);background:rgba(20,18,17,0.94);backdrop-filter:blur(48px);-webkit-backdrop-filter:blur(48px);border:1px solid rgba(255,255,255,0.18);border-radius:22px;box-shadow:0 18px 55px rgba(0,0,0,0.3);padding:12px;opacity:0;pointer-events:none;transition:opacity .28s,transform .28s}
+.ot-nav.menu-open~.ot-mob-nav{opacity:1;pointer-events:auto;transform:translateX(-50%) translateY(0)}
+.ot-mob-nav a{display:block;padding:13px 18px;text-transform:uppercase;font:12px var(--mono);letter-spacing:.1em;color:rgba(255,255,255,0.82);border-radius:12px;transition:.2s}
+.ot-mob-nav a:hover,.ot-mob-nav a.active{background:rgba(255,255,255,0.08);color:#fff}
+.ot-mob-nav a.active{color:#79aecd}
+.ot-mob-cta{display:flex!important;align-items:center;justify-content:center;gap:10px;margin-top:6px!important;padding:13px 18px!important;background:#2e7da6;color:#fff!important;border-radius:12px!important;font:12px var(--mono)!important}
+@media(max-width:900px){.ot-toggle{display:flex}.ot-nav-cta{font-size:9px;padding:8px 12px;}}
+@media(max-width:600px){.ot-nav{height:62px;top:8px;width:calc(100% - 16px)}}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<header class="ot-nav">
+  <a href="/" class="ot-nav-brand"><img src="/static/images/logo.png" alt="Fix For Ease"></a>
+  <nav class="ot-nav-links">
+    <a href="/ourworks">Our Works</a>
+    <a href="/ourteam" class="active">Our Team</a>
+    <a href="/how-it-works">How It Works</a>
+    <a href="/faq">FAQ</a>
+  </nav>
+  <a href="/#contact" class="ot-nav-cta">Book a Call <span>›</span></a>
+  <button class="ot-toggle" aria-label="Open menu"><span></span><span></span><span></span></button>
+</header>
+<nav class="ot-mob-nav">
+  <a href="/ourworks">Our Works</a>
+  <a href="/ourteam" class="active">Our Team</a>
+  <a href="/how-it-works">How It Works</a>
+  <a href="/faq">FAQ</a>
+  <a href="/#contact" class="ot-mob-cta">Book a Call ›</a>
+</nav>
+
+<!-- HERO -->
+<section class="ot-hero">
+  <div class="ot-hero-eyebrow"><span></span> Fix For Ease</div>
+  <h1>OUR<br><em>TEAM</em></h1>
+  <p>A dedicated team of editors who live and breathe wedding storytelling — every frame polished with care.</p>
+</section>
+
+<!-- FOUNDER -->
+<section style="background:linear-gradient(180deg,var(--charcoal) 0%,#0d1118 100%)">
+  <div class="ot-founder">
+    <div class="ot-founder-img-wrap">
+      
+      <img class="ot-founder-img" src="/uploads/cdc046610f0a4700895f1744adc06d72.jpg" alt="Sayedur Rahman Sayeed">
+      
+      <div class="ot-founder-img-accent"></div>
+    </div>
+    <div class="ot-founder-content">
+      <div class="ot-founder-eyebrow"><span></span> Founder</div>
+      <div class="ot-founder-name">Sayedur Rahman Sayeed</div>
+      <div class="ot-founder-title">Founder, Fix For Ease</div>
+      <div class="ot-founder-bio">
+        
+        <p>This is where the founder's story goes — their passion for wedding filmmaking, what led them to start Fix For Ease, and what drives the team every day.</p>
+        <p>A second paragraph about their vision, values, and what makes Fix For Ease different from the rest.</p>
+        
+      </div>
+      <div class="ot-founder-quote">
+        "Every couple deserves their story told beautifully — that's why we exist."
+      </div>
+      <div class="ot-founder-stats">
+        <div>
+          <div class="ot-stat-val">11</div>
+          <div class="ot-stat-label">Years of Experience</div>
+        </div>
+        <div>
+          <div class="ot-stat-val">500+</div>
+          <div class="ot-stat-label">Weddings Edited</div>
+        </div>
+        <div>
+          <div class="ot-stat-val">15+</div>
+          <div class="ot-stat-label">Countries</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<div class="ot-divider"><hr></div>
+
+<!-- MANAGEMENT -->
+<section style="background:#0d1118">
+  <div class="ot-mgmt">
+    <div class="ot-mgmt-header">
+      <div class="ot-mgmt-eyebrow"><span></span> Leadership</div>
+      <h2 class="ot-mgmt-title">MANAGEMENT &<br><em>SENIOR QC</em></h2>
+    </div>
+    <div class="ot-mgmt-grid">
+      
+      <div class="ot-mgmt-card">
+        
+        <img class="ot-mgmt-photo" src="/uploads/855993f74eb348b5ac604b9fcb3c9897.jpg" alt="Md Noman Rahat" loading="lazy">
+        
+        <div class="ot-mgmt-body">
+          <div class="ot-mgmt-name">Md Noman Rahat</div>
+          <div class="ot-mgmt-role">Manager</div>
+          
+          
+          
+          
+          <div class="ot-mgmt-quote">Keeping every project on track — from first file to final delivery.</div>
+          
+          <div class="ot-mgmt-exp">5 Years of Experience</div>
+          
+        </div>
+      </div>
+      
+      <div class="ot-mgmt-card">
+        
+        <img class="ot-mgmt-photo" src="/uploads/6d40a15581dc4b6b9e37f5812c59e801.jpg" alt="Rakibul islam" loading="lazy">
+        
+        <div class="ot-mgmt-body">
+          <div class="ot-mgmt-name">Rakibul islam</div>
+          <div class="ot-mgmt-role">Senior Video Editor</div>
+          
+          
+          
+          
+          <div class="ot-mgmt-quote">QC and delivery — making sure nothing leaves without our stamp of quality.</div>
+          
+          <div class="ot-mgmt-exp">8 Years of Experience</div>
+          
+        </div>
+      </div>
+      
+      <div class="ot-mgmt-card">
+        
+        <img class="ot-mgmt-photo" src="/uploads/654863e73d2443ee905224614adb3ee2.jpg" alt="Abdur Rahman Imran" loading="lazy">
+        
+        <div class="ot-mgmt-body">
+          <div class="ot-mgmt-name">Abdur Rahman Imran</div>
+          <div class="ot-mgmt-role">Senior Video Editor</div>
+          
+          
+          
+          
+          <div class="ot-mgmt-quote">From first cut to final export, zero compromise on standard.</div>
+          
+          <div class="ot-mgmt-exp">5 Years of Experience</div>
+          
+        </div>
+      </div>
+      
+      <div class="ot-mgmt-card">
+        
+        <img class="ot-mgmt-photo" src="/uploads/bb1f198a42014b11bb89cee3144bcc3d.jpg" alt="Faysal Khandoker" loading="lazy">
+        
+        <div class="ot-mgmt-body">
+          <div class="ot-mgmt-name">Faysal Khandoker</div>
+          <div class="ot-mgmt-role">Senior Photo Editor</div>
+          
+          
+          
+          
+          <div class="ot-mgmt-quote">Every image colour-graded and reviewed before client delivery.</div>
+          
+          <div class="ot-mgmt-exp">4 Years of Experience</div>
+          
+        </div>
+      </div>
+      
+      <div class="ot-mgmt-card">
+        
+        <img class="ot-mgmt-photo" src="/uploads/e3a680e5825c402c9aaac691f623af11.jpg" alt="Tawhidul Islam Antu" loading="lazy">
+        
+        <div class="ot-mgmt-body">
+          <div class="ot-mgmt-name">Tawhidul Islam Antu</div>
+          <div class="ot-mgmt-role">Senior Photo Editor</div>
+          
+          
+          
+          
+          <div class="ot-mgmt-quote">Precision retouching and quality control on every photo set.</div>
+          
+          <div class="ot-mgmt-exp">2 Years of Experience</div>
+          
+        </div>
+      </div>
+      
+    </div>
+  </div>
+</section>
+
+
+<div class="ot-divider"><hr></div>
+
+<!-- TEAM -->
+<section style="background:#0d1118">
+  <div class="ot-team">
+    <div class="ot-team-header">
+      <div class="ot-team-eyebrow"><span></span> The Crew</div>
+      <h2 class="ot-team-title">MEET THE<br><em>EDITORS</em></h2>
+    </div>
+    <div class="ot-team-grid">
+      
+      <div class="ot-member-card">
+        
+        <img class="ot-member-photo" src="/uploads/46b131d68b6449eaad449a1ab9a088ae.jpg" alt="Minhazul Islam Nirvik" loading="lazy">
+        
+        <div class="ot-member-info">
+          <div class="ot-member-name">Minhazul Islam Nirvik</div>
+          <div class="ot-member-role">Senior Video Editor</div>
+          <div class="ot-member-exp">3 Years of Experience</div>
+        </div>
+      </div>
+      
+      <div class="ot-member-card">
+        
+        <img class="ot-member-photo" src="/uploads/5390bdce12d94a11a6239d3beb088eaa.jpg" alt="Mahbubur Rahman" loading="lazy">
+        
+        <div class="ot-member-info">
+          <div class="ot-member-name">Mahbubur Rahman</div>
+          <div class="ot-member-role">Senior Video Editor</div>
+          <div class="ot-member-exp">3 Years of Experience</div>
+        </div>
+      </div>
+      
+      <div class="ot-member-card">
+        
+        <img class="ot-member-photo" src="/uploads/1dc275a1714e4722bc1c88c9001c47d8.jpg" alt="Abdullah Sakib" loading="lazy">
+        
+        <div class="ot-member-info">
+          <div class="ot-member-name">Abdullah Sakib</div>
+          <div class="ot-member-role">Video Editor</div>
+          <div class="ot-member-exp">2 Years of Experience</div>
+        </div>
+      </div>
+      
+      <div class="ot-member-card">
+        
+        <img class="ot-member-photo" src="/uploads/6a58b0018eea4218b4654025fc3cae76.jpg" alt="Shifat Khondokar" loading="lazy">
+        
+        <div class="ot-member-info">
+          <div class="ot-member-name">Shifat Khondokar</div>
+          <div class="ot-member-role">Photo &amp; Video Editor</div>
+          <div class="ot-member-exp">4 Years of Experience</div>
+        </div>
+      </div>
+      
+      <div class="ot-member-card">
+        
+        <img class="ot-member-photo" src="/uploads/0fecffbd8c2144ceb8dd16f1395aba0f.jpg" alt="Abdur Rahim Bhuiyan" loading="lazy">
+        
+        <div class="ot-member-info">
+          <div class="ot-member-name">Abdur Rahim Bhuiyan</div>
+          <div class="ot-member-role">Video Editor</div>
+          <div class="ot-member-exp">2 Years of Experience</div>
+        </div>
+      </div>
+      
+      <div class="ot-member-card">
+        
+        <img class="ot-member-photo" src="/uploads/bd0bbf68fe3c47bb8254502b54c9b2eb.jpg" alt="Afzal sikdar" loading="lazy">
+        
+        <div class="ot-member-info">
+          <div class="ot-member-name">Afzal sikdar</div>
+          <div class="ot-member-role">Video Editor</div>
+          <div class="ot-member-exp">3 Years of Experience</div>
+        </div>
+      </div>
+      
+      <div class="ot-member-card">
+        
+        <img class="ot-member-photo" src="/uploads/6399d05d7d1c42c0b9b7302732536ef4.jpg" alt="Sakib Siddique" loading="lazy">
+        
+        <div class="ot-member-info">
+          <div class="ot-member-name">Sakib Siddique</div>
+          <div class="ot-member-role">Junior Video Editor</div>
+          <div class="ot-member-exp">1 Years of Experience</div>
+        </div>
+      </div>
+      
+      <div class="ot-member-card">
+        
+        <img class="ot-member-photo" src="/uploads/dba6906c3b4a46ffabc22d453cb5e4e3.jpg" alt="Aziz Hossain Shagor" loading="lazy">
+        
+        <div class="ot-member-info">
+          <div class="ot-member-name">Aziz Hossain Shagor</div>
+          <div class="ot-member-role">Junior Video Editor</div>
+          <div class="ot-member-exp">1 Years of Experience</div>
+        </div>
+      </div>
+      
+      <div class="ot-member-card">
+        
+        <img class="ot-member-photo" src="/uploads/9753ce4273c6432fac39102c0c2078bb.jpg" alt="Md Parvej" loading="lazy">
+        
+        <div class="ot-member-info">
+          <div class="ot-member-name">Md Parvej</div>
+          <div class="ot-member-role">photo culling expert</div>
+          <div class="ot-member-exp">2 Years of Experience</div>
+        </div>
+      </div>
+      
+      <div class="ot-member-card">
+        
+        <img class="ot-member-photo" src="/uploads/00f0601d690143aa8bb7af8899660d3b.jpg" alt="Kazi Sahadat" loading="lazy">
+        
+        <div class="ot-member-info">
+          <div class="ot-member-name">Kazi Sahadat</div>
+          <div class="ot-member-role">Intern photo editor</div>
+          <div class="ot-member-exp">1 Years of Experience</div>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="ot-footer">
+  <a href="/"><img src="/static/images/logo.png" alt="Fix For Ease" style="width:120px;filter:brightness(0) invert(1);opacity:.55"></a>
+  <span class="ot-footer-text">© 2026 Fix For Ease</span>
+  <a href="/#contact" class="ot-footer-link">Start a Project ›</a>
+</footer>
+
+<script>
+(function(){
+  var nav=document.querySelector('.ot-nav');
+  var toggle=document.querySelector('.ot-toggle');
+  var mob=document.querySelector('.ot-mob-nav');
+  if(!toggle)return;
+  toggle.addEventListener('click',function(){nav.classList.toggle('menu-open');});
+  document.addEventListener('click',function(e){if(!nav.contains(e.target)&&mob&&!mob.contains(e.target))nav.classList.remove('menu-open');});
+})();
+</script>
+</body>
+</html>

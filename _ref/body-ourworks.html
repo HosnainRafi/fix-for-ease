@@ -1,0 +1,756 @@
+﻿
+
+<!-- NAV -->
+<header class="ow-nav">
+  <a href="/" class="ow-nav-brand"><img src="/static/images/logo.png" alt="Fix For Ease"></a>
+  <nav class="ow-nav-links">
+    <a href="/ourworks" class="active">Our Works</a>
+    <a href="/ourteam">Our Team</a>
+    <a href="/how-it-works">How It Works</a>
+    <a href="/faq">FAQ</a>
+  </nav>
+  <a href="/#contact" class="ow-nav-cta">Book a Call <span>â€º</span></a>
+  <button class="ow-toggle" aria-label="Open menu"><span></span><span></span><span></span></button>
+</header>
+<nav class="ow-mob-nav">
+  <a href="/ourworks" class="active">Our Works</a>
+  <a href="/ourteam">Our Team</a>
+  <a href="/how-it-works">How It Works</a>
+  <a href="/faq">FAQ</a>
+  <a href="/#contact" class="ow-mob-cta">Book a Call â€º</a>
+</nav>
+
+<!-- HERO -->
+<section class="ow-hero">
+  <div class="ow-hero-eyebrow"><span></span> Fix For Ease</div>
+  <h1>OUR<br><em>WORKS</em></h1>
+  <p>Every frame crafted with intention. From South Asian celebrations to intimate elopements â€” our portfolio of editing work.</p>
+</section>
+
+<!-- TYPE SWITCH -->
+<div class="ow-switch-wrap">
+  <div class="ow-switch">
+    <button class="ow-switch-btn active" data-type="photos" onclick="switchType('photos',this)">Photos</button>
+    <button class="ow-switch-btn" data-type="videos" onclick="switchType('videos',this)">Videos</button>
+  </div>
+</div>
+
+<!-- PHOTOS SECTION -->
+<div id="ow-photos" class="ow-type-section">
+  <div class="ow-content">
+    <div class="ow-cats-wrap">
+    <div class="ow-cats" id="photos-cats">
+      <button class="ow-cat-btn active" data-cat="all" onclick="filterCat('photos','all',this)">All</button>
+      
+      <button class="ow-cat-btn" data-cat="South Asian Weddings" onclick="filterCat('photos','South Asian Weddings',this)">
+        <span class="ow-cat-num">01</span>South Asian Weddings
+      </button>
+      
+      <button class="ow-cat-btn" data-cat="Western Weddings" onclick="filterCat('photos','Western Weddings',this)">
+        <span class="ow-cat-num">02</span>Western Weddings
+      </button>
+      
+      <button class="ow-cat-btn" data-cat="Multicultural Weddings" onclick="filterCat('photos','Multicultural Weddings',this)">
+        <span class="ow-cat-num">03</span>Multicultural Weddings
+      </button>
+      
+      <button class="ow-cat-btn" data-cat="Destination Weddings" onclick="filterCat('photos','Destination Weddings',this)">
+        <span class="ow-cat-num">04</span>Destination Weddings
+      </button>
+      
+      <button class="ow-cat-btn" data-cat="Engagement &amp; Couple Sessions" onclick="filterCat('photos','Engagement &amp; Couple Sessions',this)">
+        <span class="ow-cat-num">05</span>Engagement &amp; Couple Sessions
+      </button>
+      
+      <button class="ow-cat-btn" data-cat="Wedding Details &amp; Reception" onclick="filterCat('photos','Wedding Details &amp; Reception',this)">
+        <span class="ow-cat-num">06</span>Wedding Details &amp; Reception
+      </button>
+      
+    </div>
+    </div>
+    <div class="ow-cat-dropdown-wrap">
+      <select class="ow-cat-select" id="photos-cat-select" onchange="filterCat('photos',this.value,null)">
+        <option value="all">All Categories</option>
+        
+        <option value="South Asian Weddings">01 South Asian Weddings</option>
+        
+        <option value="Western Weddings">02 Western Weddings</option>
+        
+        <option value="Multicultural Weddings">03 Multicultural Weddings</option>
+        
+        <option value="Destination Weddings">04 Destination Weddings</option>
+        
+        <option value="Engagement &amp; Couple Sessions">05 Engagement &amp; Couple Sessions</option>
+        
+        <option value="Wedding Details &amp; Reception">06 Wedding Details &amp; Reception</option>
+        
+      </select>
+      <span class="ow-cat-select-arrow">â–¾</span>
+    </div>
+    <div class="ow-photo-masonry" id="photos-grid">
+      
+      
+      
+      <div class="ow-photo-item" data-cat="South Asian Weddings"  onclick="openPhotoLb(0)">
+        
+        <img class="blur-up" src="/thumb/5e393c6e492c4df883f9c7fda5122e96.jpg" data-src="/uploads/5e393c6e492c4df883f9c7fda5122e96.jpg" alt="One Last Touch Before the Vows">
+        
+      </div>
+      
+      
+      <div class="ow-photo-item" data-cat="South Asian Weddings"  onclick="openPhotoLb(1)">
+        
+        <img class="blur-up" src="/thumb/e616ba9dafe94446b1b9e5a59d4be1f8.jpg" data-src="/uploads/e616ba9dafe94446b1b9e5a59d4be1f8.jpg" alt="A Promise Made for Life">
+        
+      </div>
+      
+      
+      <div class="ow-photo-item" data-cat="South Asian Weddings"  onclick="openPhotoLb(2)">
+        
+        <img class="blur-up" src="/thumb/1b15087713b7430f8613ea6f50b780e2.jpg" data-src="/uploads/1b15087713b7430f8613ea6f50b780e2.jpg" alt="By Her Side">
+        
+      </div>
+      
+      
+      <div class="ow-photo-item" data-cat="South Asian Weddings"  onclick="openPhotoLb(3)">
+        
+        <img class="blur-up" src="/thumb/694f24a6520c4b298e14f84aa6c4dc77.jpg" data-src="/uploads/694f24a6520c4b298e14f84aa6c4dc77.jpg" alt="The Beginning of Us">
+        
+      </div>
+      
+      
+      <div class="ow-photo-item" data-cat="South Asian Weddings"  onclick="openPhotoLb(4)">
+        
+        <img class="blur-up" src="/thumb/c53c883ff2804b09b0374ac54d3aaba8.jpg" data-src="/uploads/c53c883ff2804b09b0374ac54d3aaba8.jpg" alt="Standing at the Start of Forever">
+        
+      </div>
+      
+      
+      <div class="ow-photo-item" data-cat="South Asian Weddings"  onclick="openPhotoLb(5)">
+        
+        <img class="blur-up" src="/thumb/f4224dc293f24737bfae5e79242cd0f2.jpg" data-src="/uploads/f4224dc293f24737bfae5e79242cd0f2.jpg" alt="Side by Side, Forever">
+        
+      </div>
+      
+      
+      <div class="ow-photo-item" data-cat="South Asian Weddings"  onclick="openPhotoLb(6)">
+        
+        <img class="blur-up" src="/thumb/25592768a0f7482380598366fc63e44a.jpg" data-src="/uploads/25592768a0f7482380598366fc63e44a.jpg" alt="Our Forever Began Here">
+        
+      </div>
+      
+      
+      <div class="ow-photo-item" data-cat="South Asian Weddings"  onclick="openPhotoLb(7)">
+        
+        <img class="blur-up" src="/thumb/7499f8c04d6745778690c15caafcf336.jpg" data-src="/uploads/7499f8c04d6745778690c15caafcf336.jpg" alt="The Ones Beside Her">
+        
+      </div>
+      
+      
+      <div class="ow-photo-item" data-cat="South Asian Weddings"  onclick="openPhotoLb(8)">
+        
+        <img class="blur-up" src="/thumb/3b69bed74db34ea8ac34c55a1d7c8b3d.jpg" data-src="/uploads/3b69bed74db34ea8ac34c55a1d7c8b3d.jpg" alt="The Moment Forever Became Ours">
+        
+      </div>
+      
+      
+      <div class="ow-photo-item" data-cat="South Asian Weddings"  onclick="openPhotoLb(9)">
+        
+        <img class="blur-up" src="/thumb/82b8d4b5e2c64629a2711575df728842.jpg" data-src="/uploads/82b8d4b5e2c64629a2711575df728842.jpg" alt="A Moment Before &#39;I Do&#39;">
+        
+      </div>
+      
+      
+      <div class="ow-photo-item" data-cat="South Asian Weddings"  onclick="openPhotoLb(10)">
+        
+        <img class="blur-up" src="/thumb/7fc6c85a3f9f43979738ebc016b504d0.jpg" data-src="/uploads/7fc6c85a3f9f43979738ebc016b504d0.jpg" alt="A Promise Made for Life">
+        
+      </div>
+      
+    </div>
+    
+  </div>
+</div>
+
+<!-- VIDEOS SECTION -->
+<div id="ow-videos" class="ow-type-section" style="display:none">
+  <div class="ow-content">
+    <div class="ow-cats-wrap">
+    <div class="ow-cats" id="videos-cats">
+      <button class="ow-cat-btn active" data-cat="all" onclick="filterCat('videos','all',this)">All</button>
+      
+      <button class="ow-cat-btn" data-cat="Highlights" onclick="filterCat('videos','Highlights',this)">
+        <span class="ow-cat-num">01</span>Highlights
+      </button>
+      
+      <button class="ow-cat-btn" data-cat="Teaser" onclick="filterCat('videos','Teaser',this)">
+        <span class="ow-cat-num">02</span>Teaser
+      </button>
+      
+      <button class="ow-cat-btn" data-cat="Vertical Film" onclick="filterCat('videos','Vertical Film',this)">
+        <span class="ow-cat-num">03</span>Vertical Film
+      </button>
+      
+      <button class="ow-cat-btn" data-cat="Full Film" onclick="filterCat('videos','Full Film',this)">
+        <span class="ow-cat-num">04</span>Full Film
+      </button>
+      
+    </div>
+    </div>
+    <div class="ow-cat-dropdown-wrap">
+      <select class="ow-cat-select" id="videos-cat-select" onchange="filterCat('videos',this.value,null)">
+        <option value="all">All Categories</option>
+        
+        <option value="Highlights">01 Highlights</option>
+        
+        <option value="Teaser">02 Teaser</option>
+        
+        <option value="Vertical Film">03 Vertical Film</option>
+        
+        <option value="Full Film">04 Full Film</option>
+        
+      </select>
+      <span class="ow-cat-select-arrow">â–¾</span>
+    </div>
+    <div class="ow-grid" id="videos-grid">
+      
+      
+      
+      <article class="ow-card ow-video-card" data-cat="Highlights"
+        data-embed="https://www.youtube-nocookie.com/embed/sNY_zdNIGbQ?rel=0&amp;modestbranding=1"
+        data-title="Together, From This Day Forward" data-category="Highlights"
+        
+        onclick="openVideo(this)">
+        <div class="ow-vid-thumb">
+          
+          <img src="https://img.youtube.com/vi/sNY_zdNIGbQ/hqdefault.jpg" alt="Together, From This Day Forward" loading="lazy" onerror="this.style.display='none'">
+          
+          <span class="ow-vid-cat-badge">Highlights</span>
+          <div class="ow-vid-play"><button aria-label="Play">â–¶</button></div>
+          <span class="ow-vid-duration">5â€“8 min</span>
+          
+        </div>
+        <div class="ow-card-info">
+          <div class="ow-card-title">Together, From This Day Forward</div>
+        </div>
+      </article>
+      
+      
+      <article class="ow-card ow-video-card" data-cat="Vertical Film"
+        data-embed="https://www.youtube-nocookie.com/embed/ZsTZAvCUiJs?rel=0&amp;modestbranding=1"
+        data-title="A Story Only We Could Write" data-category="Vertical Film"
+        
+        onclick="openVideo(this)">
+        <div class="ow-vid-thumb">
+          
+          <img src="https://img.youtube.com/vi/ZsTZAvCUiJs/hqdefault.jpg" alt="A Story Only We Could Write" loading="lazy" onerror="this.style.display='none'">
+          
+          <span class="ow-vid-cat-badge">Vertical Film</span>
+          <div class="ow-vid-play"><button aria-label="Play">â–¶</button></div>
+          
+          
+        </div>
+        <div class="ow-card-info">
+          <div class="ow-card-title">A Story Only We Could Write</div>
+        </div>
+      </article>
+      
+      
+      <article class="ow-card ow-video-card" data-cat="Highlights"
+        data-embed="https://iframe.mediadelivery.net/embed/772876/8a0f347c-ff5a-4b62-a122-fbe0eea83d90?autoplay=false&amp;preload=true"
+        data-title="Victoria &amp; Tommy Highlight" data-category="Highlights"
+        
+        onclick="openVideo(this)">
+        <div class="ow-vid-thumb">
+          
+          <img src="https://vz-0e2b83a7-459.b-cdn.net/8a0f347c-ff5a-4b62-a122-fbe0eea83d90/thumbnail.jpg" alt="Victoria &amp; Tommy Highlight" loading="lazy" onerror="this.style.display='none'">
+          
+          <span class="ow-vid-cat-badge">Highlights</span>
+          <div class="ow-vid-play"><button aria-label="Play">â–¶</button></div>
+          <span class="ow-vid-duration">5â€“8 min</span>
+          
+        </div>
+        <div class="ow-card-info">
+          <div class="ow-card-title">Victoria &amp; Tommy Highlight</div>
+        </div>
+      </article>
+      
+      
+      <article class="ow-card ow-video-card" data-cat="Vertical Film"
+        data-embed="https://iframe.mediadelivery.net/embed/772876/99c98131-9394-4474-b3e2-bdde431edf33?autoplay=false&amp;preload=true"
+        data-title="Getting Ready for Always" data-category="Vertical Film"
+        
+        onclick="openVideo(this)">
+        <div class="ow-vid-thumb">
+          
+          <img src="https://vz-0e2b83a7-459.b-cdn.net/99c98131-9394-4474-b3e2-bdde431edf33/thumbnail.jpg" alt="Getting Ready for Always" loading="lazy" onerror="this.style.display='none'">
+          
+          <span class="ow-vid-cat-badge">Vertical Film</span>
+          <div class="ow-vid-play"><button aria-label="Play">â–¶</button></div>
+          
+          
+        </div>
+        <div class="ow-card-info">
+          <div class="ow-card-title">Getting Ready for Always</div>
+        </div>
+      </article>
+      
+      
+      <article class="ow-card ow-video-card" data-cat="Vertical Film"
+        data-embed="https://iframe.mediadelivery.net/embed/772876/756d2ab2-8585-4d7e-a289-56e2dc2ffbac?autoplay=false&amp;preload=true"
+        data-title="The Day We Said â€œI Doâ€" data-category="Vertical Film"
+        
+        onclick="openVideo(this)">
+        <div class="ow-vid-thumb">
+          
+          <img src="/uploads/4e2d61a313fb4f56a13c7328c34f7d07.jpg" alt="The Day We Said â€œI Doâ€" loading="lazy" onerror="this.style.display='none'">
+          
+          <span class="ow-vid-cat-badge">Vertical Film</span>
+          <div class="ow-vid-play"><button aria-label="Play">â–¶</button></div>
+          
+          
+        </div>
+        <div class="ow-card-info">
+          <div class="ow-card-title">The Day We Said â€œI Doâ€</div>
+        </div>
+      </article>
+      
+      
+      <article class="ow-card ow-video-card" data-cat="Vertical Film"
+        data-embed="https://iframe.mediadelivery.net/embed/772876/5ea94f7b-d8d7-47cd-847c-b7f7235d1d98?autoplay=false&amp;preload=true"
+        data-title="A Promise Made for Life" data-category="Vertical Film"
+        
+        onclick="openVideo(this)">
+        <div class="ow-vid-thumb">
+          
+          <img src="https://vz-0e2b83a7-459.b-cdn.net/5ea94f7b-d8d7-47cd-847c-b7f7235d1d98/thumbnail.jpg" alt="A Promise Made for Life" loading="lazy" onerror="this.style.display='none'">
+          
+          <span class="ow-vid-cat-badge">Vertical Film</span>
+          <div class="ow-vid-play"><button aria-label="Play">â–¶</button></div>
+          
+          
+        </div>
+        <div class="ow-card-info">
+          <div class="ow-card-title">A Promise Made for Life</div>
+        </div>
+      </article>
+      
+      
+      <article class="ow-card ow-video-card" data-cat="Highlights"
+        data-embed="https://www.youtube-nocookie.com/embed/fEHfUJxzxjs?rel=0&amp;modestbranding=1"
+        data-title="The Day We Became Us" data-category="Highlights"
+        data-hidden="1"
+        onclick="openVideo(this)">
+        <div class="ow-vid-thumb">
+          
+          <img src="https://img.youtube.com/vi/fEHfUJxzxjs/hqdefault.jpg" alt="The Day We Became Us" loading="lazy" onerror="this.style.display='none'">
+          
+          <span class="ow-vid-cat-badge">Highlights</span>
+          <div class="ow-vid-play"><button aria-label="Play">â–¶</button></div>
+          <span class="ow-vid-duration">5â€“8 min</span>
+          
+        </div>
+        <div class="ow-card-info">
+          <div class="ow-card-title">The Day We Became Us</div>
+        </div>
+      </article>
+      
+      
+      <article class="ow-card ow-video-card" data-cat="Vertical Film"
+        data-embed="https://www.youtube-nocookie.com/embed/NDt4PIugoS4?rel=0&amp;modestbranding=1"
+        data-title="Our Story Starts Here" data-category="Vertical Film"
+        data-hidden="1"
+        onclick="openVideo(this)">
+        <div class="ow-vid-thumb">
+          
+          <img src="https://img.youtube.com/vi/NDt4PIugoS4/hqdefault.jpg" alt="Our Story Starts Here" loading="lazy" onerror="this.style.display='none'">
+          
+          <span class="ow-vid-cat-badge">Vertical Film</span>
+          <div class="ow-vid-play"><button aria-label="Play">â–¶</button></div>
+          
+          
+        </div>
+        <div class="ow-card-info">
+          <div class="ow-card-title">Our Story Starts Here</div>
+        </div>
+      </article>
+      
+      
+      <article class="ow-card ow-video-card" data-cat="Highlights"
+        data-embed="https://www.youtube-nocookie.com/embed/wJ-O2_NX1cU?rel=0&amp;modestbranding=1"
+        data-title="A Love That Feels Like Forever" data-category="Highlights"
+        data-hidden="1"
+        onclick="openVideo(this)">
+        <div class="ow-vid-thumb">
+          
+          <img src="https://img.youtube.com/vi/wJ-O2_NX1cU/hqdefault.jpg" alt="A Love That Feels Like Forever" loading="lazy" onerror="this.style.display='none'">
+          
+          <span class="ow-vid-cat-badge">Highlights</span>
+          <div class="ow-vid-play"><button aria-label="Play">â–¶</button></div>
+          <span class="ow-vid-duration">5â€“8 min</span>
+          
+        </div>
+        <div class="ow-card-info">
+          <div class="ow-card-title">A Love That Feels Like Forever</div>
+        </div>
+      </article>
+      
+      
+      <article class="ow-card ow-video-card" data-cat="Vertical Film"
+        data-embed="https://www.youtube-nocookie.com/embed/V5X8LXya5qg?rel=0&amp;modestbranding=1"
+        data-title="Somewhere Between Now and Forever" data-category="Vertical Film"
+        data-hidden="1"
+        onclick="openVideo(this)">
+        <div class="ow-vid-thumb">
+          
+          <img src="https://img.youtube.com/vi/V5X8LXya5qg/hqdefault.jpg" alt="Somewhere Between Now and Forever" loading="lazy" onerror="this.style.display='none'">
+          
+          <span class="ow-vid-cat-badge">Vertical Film</span>
+          <div class="ow-vid-play"><button aria-label="Play">â–¶</button></div>
+          
+          
+        </div>
+        <div class="ow-card-info">
+          <div class="ow-card-title">Somewhere Between Now and Forever</div>
+        </div>
+      </article>
+      
+      
+      <article class="ow-card ow-video-card" data-cat="Highlights"
+        data-embed="https://www.youtube-nocookie.com/embed/Ij8NkK7GslM?rel=0&amp;modestbranding=1"
+        data-title="The Start of Something Beautiful" data-category="Highlights"
+        data-hidden="1"
+        onclick="openVideo(this)">
+        <div class="ow-vid-thumb">
+          
+          <img src="https://img.youtube.com/vi/Ij8NkK7GslM/hqdefault.jpg" alt="The Start of Something Beautiful" loading="lazy" onerror="this.style.display='none'">
+          
+          <span class="ow-vid-cat-badge">Highlights</span>
+          <div class="ow-vid-play"><button aria-label="Play">â–¶</button></div>
+          <span class="ow-vid-duration">5â€“8 min</span>
+          
+        </div>
+        <div class="ow-card-info">
+          <div class="ow-card-title">The Start of Something Beautiful</div>
+        </div>
+      </article>
+      
+      
+      <article class="ow-card ow-video-card" data-cat="Highlights"
+        data-embed="https://www.youtube-nocookie.com/embed/Tu1LQTVNK1g?rel=0&amp;modestbranding=1"
+        data-title="One Love, One Lifetime" data-category="Highlights"
+        data-hidden="1"
+        onclick="openVideo(this)">
+        <div class="ow-vid-thumb">
+          
+          <img src="https://img.youtube.com/vi/Tu1LQTVNK1g/hqdefault.jpg" alt="One Love, One Lifetime" loading="lazy" onerror="this.style.display='none'">
+          
+          <span class="ow-vid-cat-badge">Highlights</span>
+          <div class="ow-vid-play"><button aria-label="Play">â–¶</button></div>
+          <span class="ow-vid-duration">5â€“8 min</span>
+          
+        </div>
+        <div class="ow-card-info">
+          <div class="ow-card-title">One Love, One Lifetime</div>
+        </div>
+      </article>
+      
+      
+      <article class="ow-card ow-video-card" data-cat="Highlights"
+        data-embed="https://www.youtube-nocookie.com/embed/HcLEPj3ExR4?rel=0&amp;modestbranding=1"
+        data-title="We Should Stick Together" data-category="Highlights"
+        data-hidden="1"
+        onclick="openVideo(this)">
+        <div class="ow-vid-thumb">
+          
+          <img src="https://img.youtube.com/vi/HcLEPj3ExR4/hqdefault.jpg" alt="We Should Stick Together" loading="lazy" onerror="this.style.display='none'">
+          
+          <span class="ow-vid-cat-badge">Highlights</span>
+          <div class="ow-vid-play"><button aria-label="Play">â–¶</button></div>
+          <span class="ow-vid-duration">5â€“8 min</span>
+          
+        </div>
+        <div class="ow-card-info">
+          <div class="ow-card-title">We Should Stick Together</div>
+        </div>
+      </article>
+      
+      
+      <article class="ow-card ow-video-card" data-cat="Highlights"
+        data-embed="https://www.youtube-nocookie.com/embed/PXRhJTnT33M?rel=0&amp;modestbranding=1"
+        data-title="A Day to Remember, A Love to Cherish" data-category="Highlights"
+        data-hidden="1"
+        onclick="openVideo(this)">
+        <div class="ow-vid-thumb">
+          
+          <img src="https://img.youtube.com/vi/PXRhJTnT33M/hqdefault.jpg" alt="A Day to Remember, A Love to Cherish" loading="lazy" onerror="this.style.display='none'">
+          
+          <span class="ow-vid-cat-badge">Highlights</span>
+          <div class="ow-vid-play"><button aria-label="Play">â–¶</button></div>
+          <span class="ow-vid-duration">5â€“8 min</span>
+          
+        </div>
+        <div class="ow-card-info">
+          <div class="ow-card-title">A Day to Remember, A Love to Cherish</div>
+        </div>
+      </article>
+      
+      
+      <article class="ow-card ow-video-card" data-cat="Highlights"
+        data-embed="https://www.youtube-nocookie.com/embed/39bN77TlOKo?rel=0&amp;modestbranding=1"
+        data-title="Love is in the Details" data-category="Highlights"
+        data-hidden="1"
+        onclick="openVideo(this)">
+        <div class="ow-vid-thumb">
+          
+          <img src="https://img.youtube.com/vi/39bN77TlOKo/hqdefault.jpg" alt="Love is in the Details" loading="lazy" onerror="this.style.display='none'">
+          
+          <span class="ow-vid-cat-badge">Highlights</span>
+          <div class="ow-vid-play"><button aria-label="Play">â–¶</button></div>
+          <span class="ow-vid-duration">5â€“8 min</span>
+          
+        </div>
+        <div class="ow-card-info">
+          <div class="ow-card-title">Love is in the Details</div>
+        </div>
+      </article>
+      
+      
+      <article class="ow-card ow-video-card" data-cat="Highlights"
+        data-embed="https://www.youtube-nocookie.com/embed/T6DRrnq7rzc?rel=0&amp;modestbranding=1"
+        data-title="Love&#39;s Eternal Promise" data-category="Highlights"
+        data-hidden="1"
+        onclick="openVideo(this)">
+        <div class="ow-vid-thumb">
+          
+          <img src="https://img.youtube.com/vi/T6DRrnq7rzc/hqdefault.jpg" alt="Love&#39;s Eternal Promise" loading="lazy" onerror="this.style.display='none'">
+          
+          <span class="ow-vid-cat-badge">Highlights</span>
+          <div class="ow-vid-play"><button aria-label="Play">â–¶</button></div>
+          <span class="ow-vid-duration">5â€“8 min</span>
+          
+        </div>
+        <div class="ow-card-info">
+          <div class="ow-card-title">Love&#39;s Eternal Promise</div>
+        </div>
+      </article>
+      
+      
+      <article class="ow-card ow-video-card" data-cat="Highlights"
+        data-embed="https://www.youtube-nocookie.com/embed/z2sCQUmpr4M?rel=0&amp;modestbranding=1"
+        data-title="Entwined Forever" data-category="Highlights"
+        data-hidden="1"
+        onclick="openVideo(this)">
+        <div class="ow-vid-thumb">
+          
+          <img src="https://img.youtube.com/vi/z2sCQUmpr4M/hqdefault.jpg" alt="Entwined Forever" loading="lazy" onerror="this.style.display='none'">
+          
+          <span class="ow-vid-cat-badge">Highlights</span>
+          <div class="ow-vid-play"><button aria-label="Play">â–¶</button></div>
+          <span class="ow-vid-duration">5â€“8 min</span>
+          
+        </div>
+        <div class="ow-card-info">
+          <div class="ow-card-title">Entwined Forever</div>
+        </div>
+      </article>
+      
+    </div>
+    
+    <div class="ow-show-more-wrap">
+      <button class="ow-show-more" id="videos-more" onclick="showMore('videos')">Show More <span id="videos-more-count"></span></button>
+    </div>
+    
+  </div>
+</div>
+
+<!-- VIDEO MODAL -->
+<!-- PHOTO LIGHTBOX -->
+<div class="ow-photo-lb" id="photo-lb" onclick="if(event.target===this)closeLb()">
+  <button class="ow-photo-lb-close" onclick="closeLb()">Ã—</button>
+  <button class="ow-photo-lb-prev" onclick="lbNav(-1)">â€¹</button>
+  <img class="ow-photo-lb-img" id="lb-img" src="" alt="">
+  <button class="ow-photo-lb-next" onclick="lbNav(1)">â€º</button>
+</div>
+
+<div class="ow-modal-bg" id="vid-modal" onclick="if(event.target===this)closeModal()">
+  <div class="ow-modal">
+    <button class="ow-modal-close" onclick="closeModal()">Ã—</button>
+    <div class="ow-modal-video"><iframe id="modal-iframe" src="" allow="autoplay; fullscreen" allowfullscreen></iframe></div>
+    <div class="ow-modal-info">
+      <h3 id="modal-title"></h3>
+      <span id="modal-cat"></span>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer class="ow-footer">
+  <a href="/"><img src="/static/images/logo.png" alt="Fix For Ease" class="ow-footer-logo" style="width:120px;filter:brightness(0) invert(1);opacity:.55"></a>
+  <span class="ow-footer-text">Â© 2026 Fix For Ease</span>
+  <a href="/#contact" class="ow-footer-link">Start a Project â€º</a>
+</footer>
+
+<script src="https://www.youtube.com/iframe_api" async></script>
+<script src="https://player.vimeo.com/api/player.js" async></script>
+<script>
+// â”€â”€ TYPE SWITCH â”€â”€
+function switchType(type, btn){
+  document.querySelectorAll('.ow-type-section').forEach(s=>s.style.display='none');
+  document.querySelectorAll('.ow-switch-btn').forEach(b=>b.classList.remove('active'));
+  document.getElementById('ow-'+type).style.display='block';
+  btn.classList.add('active');
+}
+
+// â”€â”€ CATEGORY FILTER â”€â”€
+function filterCat(type, cat, btn){
+  var grid = document.getElementById(type+'-grid');
+  var isPhoto = (type === 'photos');
+  var cards = grid.querySelectorAll('[data-cat]');
+  var moreBtn = document.getElementById(type+'-more');
+  var limit = isPhoto ? 12 : 6;
+
+  cards.forEach(function(c){ c.removeAttribute('data-hidden'); c.style.display=''; });
+
+  var visible = 0;
+  cards.forEach(function(c){
+    var match = cat === 'all' || c.dataset.cat === cat;
+    if(!match){ c.style.display='none'; }
+    else { visible++; if(visible > limit) c.setAttribute('data-hidden','1'); }
+  });
+  cards.forEach(function(c){ if(c.hasAttribute('data-hidden')) c.style.display='none'; });
+
+  // reveal animation
+  var revealClass = isPhoto ? 'ph-reveal' : 'vc-reveal';
+  var revealSel = isPhoto ? '.ow-photo-item:not([data-hidden]):not([style*="none"])' : '.ow-card:not([data-hidden]):not([style*="none"])';
+  var revealed = Array.from(grid.querySelectorAll(revealSel));
+  revealed.forEach(function(c,i){
+    c.classList.remove(revealClass);
+    void c.offsetWidth;
+    c.style.animationDelay = (i * 40)+'ms';
+    c.classList.add(revealClass);
+  });
+
+  var catWrap = document.getElementById(type+'-cats');
+  catWrap.querySelectorAll('.ow-cat-btn').forEach(b=>b.classList.remove('active'));
+  if(btn) btn.classList.add('active');
+  else { catWrap.querySelectorAll('.ow-cat-btn').forEach(function(b){ if(b.dataset.cat===cat) b.classList.add('active'); }); }
+  var sel = document.getElementById(type+'-cat-select');
+  if(sel) sel.value = cat;
+
+  if(moreBtn){
+    var hiddenCount = grid.querySelectorAll('[data-hidden]').length;
+    if(hiddenCount > 0){ moreBtn.style.display=''; }
+    else{ moreBtn.style.display='none'; }
+  }
+}
+
+// â”€â”€ SHOW MORE â”€â”€
+function showMore(type){
+  var grid = document.getElementById(type+'-grid');
+  var hidden = Array.from(grid.querySelectorAll('[data-hidden]'));
+  var batch = type === 'photos' ? 12 : 6;
+  hidden.slice(0, batch).forEach(function(c){ c.removeAttribute('data-hidden'); c.style.display=''; });
+  if(grid.querySelectorAll('[data-hidden]').length === 0){
+    var btn = document.getElementById(type+'-more');
+    if(btn) btn.style.display='none';
+  }
+}
+
+// â”€â”€ PHOTO LIGHTBOX â”€â”€
+var _lbPhotos = [], _lbIdx = 0;
+function openPhotoLb(idx){
+  var grid = document.getElementById('photos-grid');
+  _lbPhotos = Array.from(grid.querySelectorAll('.ow-photo-item:not([data-hidden]):not([style*="none"]) img')).map(function(i){ return i.dataset.src || i.src; });
+  // remap idx since hidden items may shift
+  var allItems = Array.from(grid.querySelectorAll('.ow-photo-item'));
+  var visibleItems = Array.from(grid.querySelectorAll('.ow-photo-item:not([data-hidden]):not([style*="none"])'));
+  var item = allItems[idx];
+  _lbIdx = visibleItems.indexOf(item);
+  if(_lbIdx < 0) _lbIdx = 0;
+  document.getElementById('lb-img').src = _lbPhotos[_lbIdx];
+  document.getElementById('photo-lb').classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+function lbNav(dir){
+  _lbIdx = (_lbIdx + dir + _lbPhotos.length) % _lbPhotos.length;
+  document.getElementById('lb-img').src = _lbPhotos[_lbIdx];
+}
+function closeLb(){
+  document.getElementById('photo-lb').classList.remove('open');
+  document.body.style.overflow = '';
+}
+
+// â”€â”€ VIDEO MODAL â”€â”€
+function openVideo(card){
+  var src = card.dataset.embed;
+  if(!src) return;
+  var autoSrc = src + (src.indexOf('?')>-1 ? '&' : '?') + 'autoplay=1';
+  document.getElementById('modal-iframe').src = autoSrc;
+  document.getElementById('modal-title').textContent = card.dataset.title;
+  document.getElementById('modal-cat').textContent = card.dataset.category;
+  var modal = document.querySelector('.ow-modal');
+  if(card.dataset.category === 'Vertical Film') modal.classList.add('is-vertical');
+  else modal.classList.remove('is-vertical');
+  document.getElementById('vid-modal').classList.add('open');
+}
+function closeModal(){
+  document.getElementById('vid-modal').classList.remove('open');
+  document.getElementById('modal-iframe').src = '';
+}
+document.addEventListener('keydown',function(e){
+  if(e.key==='Escape'){ closeModal(); closeLb(); }
+  if(e.key==='ArrowLeft') lbNav(-1);
+  if(e.key==='ArrowRight') lbNav(1);
+});
+
+// init show-more counts
+['photos','videos'].forEach(function(type){
+  var btn = document.getElementById(type+'-more');
+  if(!btn) return;
+  var grid = document.getElementById(type+'-grid');
+  var count = grid ? grid.querySelectorAll('[data-hidden]').length : 0;
+  if(count === 0){ btn.style.display='none'; }
+});
+</script>
+<script>
+(function(){
+  var nav=document.querySelector('.ow-nav');
+  var toggle=document.querySelector('.ow-toggle');
+  var mob=document.querySelector('.ow-mob-nav');
+  if(!toggle)return;
+  toggle.addEventListener('click',function(){nav.classList.toggle('menu-open');});
+  document.addEventListener('click',function(e){if(!nav.contains(e.target)&&mob&&!mob.contains(e.target))nav.classList.remove('menu-open');});
+})();
+</script>
+<script>
+// blur-up LQIP loader
+(function(){
+  if(!('IntersectionObserver' in window)) {
+    // fallback: just load full images immediately
+    document.querySelectorAll('img.blur-up[data-src]').forEach(function(img){
+      img.src = img.dataset.src;
+      img.classList.add('loaded');
+    });
+    return;
+  }
+  var observer = new IntersectionObserver(function(entries){
+    entries.forEach(function(entry){
+      if(!entry.isIntersecting) return;
+      var img = entry.target;
+      var full = new Image();
+      full.onload = function(){
+        img.src = img.dataset.src;
+        img.classList.add('loaded');
+      };
+      full.src = img.dataset.src;
+      observer.unobserve(img);
+    });
+  }, { rootMargin: '300px 0px' });
+
+  document.querySelectorAll('img.blur-up[data-src]').forEach(function(img){
+    observer.observe(img);
+  });
+})();
+</script>
+

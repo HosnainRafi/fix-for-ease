@@ -1,0 +1,87 @@
+/* 404 — uses the sub-page visual language (deep charcoal + sky blue). */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+  --ink: #0e0d0c;
+  --charcoal: #141211;
+  --signal: #2e7da6;
+  --brand-sky: #79aecd;
+  --mono: 'IBM Plex Mono', monospace;
+}
+html, body { min-height: 100%; }
+body {
+  background:
+    radial-gradient(ellipse at 70% 0%, rgba(121, 174, 205, .14), transparent 55%),
+    radial-gradient(ellipse at 10% 90%, rgba(46, 125, 166, .18), transparent 50%),
+    var(--charcoal);
+  color: #fff;
+  font-family: 'Inter Tight', sans-serif;
+}
+.nf {
+  min-height: 100svh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 120px 5vw 60px;
+  position: relative;
+}
+.nf-eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font: 11px var(--mono);
+  letter-spacing: .2em;
+  text-transform: uppercase;
+  color: var(--brand-sky);
+  margin-bottom: 24px;
+}
+.nf-eyebrow span { width: 32px; height: 1px; background: var(--brand-sky); }
+.nf h1 {
+  font-size: clamp(64px, 12vw, 190px);
+  font-weight: 800;
+  line-height: .86;
+  letter-spacing: -.06em;
+}
+.nf h1 em {
+  font-style: normal;
+  color: transparent;
+  -webkit-text-stroke: 1px rgba(255, 255, 255, .4);
+}
+.nf p {
+  max-width: 460px;
+  margin: 28px 0 36px;
+  color: rgba(255, 255, 255, .58);
+  font: 400 16px/1.6 'Inter', sans-serif;
+}
+.nf-actions { display: flex; align-items: center; gap: 24px; flex-wrap: wrap; }
+.nf-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 22px;
+  padding: 15px 24px;
+  border-radius: 999px;
+  background: var(--signal);
+  color: #fff;
+  font: 12px var(--mono);
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  transition: transform .3s, background .3s;
+}
+.nf-btn:hover { transform: translateY(-2px); background: #3b91bd; }
+.nf-link {
+  font: 12px var(--mono);
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, .65);
+  border-bottom: 1px solid rgba(255, 255, 255, .25);
+  padding-bottom: 4px;
+}
+.nf-link:hover { color: #fff; border-color: #fff; }
+.nf-mark {
+  position: absolute;
+  left: 5vw;
+  right: 5vw;
+  bottom: 26px;
+  font: 10px var(--mono);
+  letter-spacing: .18em;
+  color: rgba(255, 255, 255, .25);
+}

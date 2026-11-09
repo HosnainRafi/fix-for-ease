@@ -1,0 +1,28 @@
+# dependencies
+node_modules/
+
+# local runtime output
+data/
+*.log
+
+# reverse-engineering scratch (captures are kept, browser profiles are not)
+_ref/chrome-profile/
+_ref/shots/
+_ref/*.bin
+
+# OS noise
+Thumbs.db
+Desktop.ini
+.DS_Store
+
+# editors
+.vscode/
+.idea/
+
+# AutoClaw workspace bookkeeping
+.zwork/
+
+# Vercel
+.vercel/
+
+.vercel

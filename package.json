@@ -1,0 +1,20 @@
+{
+  "name": "fix-for-ease-clone",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Static rebuild of fixforease.com — reverse-engineered design, local assets, working interactions.",
+  "scripts": {
+    "dev": "node scripts/serve.js 4173",
+    "start": "node scripts/serve.js 4173",
+    "verify": "node scripts/verify.js",
+    "audit": "node scripts/audit.js",
+    "build": "node tools/build.js",
+    "shot": "node scripts/screenshot.js http://localhost:4173/ _ref/shots/home.png 1440 1000 full"
+  },
+  "devDependencies": {
+    "puppeteer-core": "^23.11.1"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}

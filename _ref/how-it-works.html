@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>How It Works — Fix For Ease</title>
+<meta name="description" content="See exactly how Fix For Ease manages your wedding edits — from file tracking in Monday.com to client review in Frame.io.">
+<link rel="icon" type="image/png" sizes="64x64" href="/static/images/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@300;400;600;800&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --charcoal:#141211;--signal:#2e7da6;--brand-sky:#79aecd;--white:#fff;
+  --mono:'IBM Plex Mono',monospace;
+}
+html{scroll-behavior:smooth;overflow-x:hidden}
+body{background:var(--charcoal);color:var(--white);font-family:'Inter',sans-serif;overflow-x:hidden;min-height:100vh}
+a{color:inherit;text-decoration:none}
+img{display:block;max-width:100%}
+
+/* ── NAV ── */
+.hw-nav{position:fixed;z-index:50;top:14px;left:50%;width:min(94%,1440px);height:72px;transform:translateX(-50%);padding:8px 12px 8px 22px;display:flex;align-items:center;justify-content:space-between;background:rgba(255,255,255,0.08);backdrop-filter:blur(64px) saturate(200%) brightness(1.08);-webkit-backdrop-filter:blur(64px) saturate(200%) brightness(1.08);border:1px solid rgba(255,255,255,0.22);border-radius:999px;box-shadow:inset 0 1.5px 0 rgba(255,255,255,0.45),0 8px 40px rgba(0,0,0,0.22)}
+.hw-nav-brand img{width:90px;height:46px;object-fit:contain}
+.hw-nav-links{display:flex;gap:30px;text-transform:uppercase;font:12px var(--mono);letter-spacing:.1em;color:rgba(255,255,255,0.8)}
+.hw-nav-links a:hover{color:#fff}
+.hw-nav-links a.active{color:#fff;border-bottom:1px solid var(--signal)}
+.hw-nav-cta{display:inline-flex;align-items:center;gap:14px;border-radius:999px;background:rgba(10,9,15,0.88);color:white;border:1px solid rgba(255,255,255,0.15);padding:12px 18px;text-transform:uppercase;font:12px var(--mono);letter-spacing:.08em;transition:.3s}
+.hw-nav-cta:hover{background:var(--signal)}
+
+/* ── HERO ── */
+.hw-hero{min-height:44vh;display:flex;flex-direction:column;justify-content:flex-end;padding:130px 5vw 56px;position:relative;overflow:hidden;background:linear-gradient(160deg,#0a0d12 0%,var(--charcoal) 100%)}
+.hw-hero::before{content:"";position:absolute;inset:0;background:radial-gradient(ellipse at 60% 0%,rgba(46,125,166,0.15),transparent 55%)}
+.hw-hero-eyebrow{font:11px var(--mono);letter-spacing:.2em;text-transform:uppercase;color:var(--brand-sky);margin-bottom:18px;display:flex;align-items:center;gap:12px}
+.hw-hero-eyebrow span{width:32px;height:1px;background:var(--brand-sky);display:inline-block}
+.hw-hero h1{font-family:'Inter Tight',sans-serif;font-size:clamp(52px,8vw,120px);font-weight:800;line-height:.88;letter-spacing:-.06em;margin-bottom:20px}
+.hw-hero h1 em{color:transparent;-webkit-text-stroke:1px rgba(255,255,255,0.35);font-style:normal}
+.hw-hero p{color:rgba(255,255,255,0.45);font-size:15px;max-width:480px;line-height:1.65}
+
+/* ── PROCESS LAYOUT ── */
+.hw-process{display:grid;grid-template-columns:360px 1fr;min-height:calc(100vh - 200px);border-top:1px solid rgba(255,255,255,0.07)}
+
+/* ── LEFT NAV ── */
+.hw-steps-nav{position:sticky;top:0;height:100vh;display:flex;flex-direction:column;justify-content:center;padding:40px 48px;border-right:1px solid rgba(255,255,255,0.07);background:rgba(0,0,0,0.15)}
+.hw-steps-nav-label{font:9px var(--mono);letter-spacing:.22em;text-transform:uppercase;color:rgba(255,255,255,0.25);margin-bottom:36px}
+.hw-step-btn{display:flex;align-items:center;gap:20px;padding:18px 0;cursor:pointer;border:none;background:none;color:rgba(255,255,255,0.28);text-align:left;width:100%;transition:color .35s;border-bottom:1px solid rgba(255,255,255,0.05);position:relative}
+.hw-step-btn:first-of-type{border-top:1px solid rgba(255,255,255,0.05)}
+.hw-step-btn:hover{color:rgba(255,255,255,0.6)}
+.hw-step-btn.active{color:#fff}
+.hw-step-btn-num{font:11px var(--mono);letter-spacing:.1em;width:28px;flex-shrink:0;transition:color .35s}
+.hw-step-btn.active .hw-step-btn-num{color:var(--signal)}
+.hw-step-btn-info{}
+.hw-step-btn-tool{font:10px var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--signal);opacity:0;transition:opacity .35s;margin-bottom:2px}
+.hw-step-btn.active .hw-step-btn-tool{opacity:1}
+.hw-step-btn-name{font-family:'Inter Tight',sans-serif;font-size:22px;font-weight:700;line-height:1.1;transition:font-size .35s}
+.hw-step-btn.active .hw-step-btn-name{font-size:26px}
+.hw-step-btn-bar{position:absolute;left:-48px;top:0;bottom:0;width:3px;background:var(--signal);transform:scaleY(0);transform-origin:top;transition:transform .45s cubic-bezier(.16,1,.3,1)}
+.hw-step-btn.active .hw-step-btn-bar{transform:scaleY(1)}
+
+/* ── RIGHT PANEL ── */
+.hw-panels{position:relative;overflow:hidden}
+.hw-panel{position:absolute;inset:0;padding:60px 56px;overflow-y:auto;opacity:0;transform:translateY(24px);pointer-events:none;transition:opacity .45s cubic-bezier(.16,1,.3,1),transform .45s cubic-bezier(.16,1,.3,1)}
+.hw-panel.active{position:relative;opacity:1;transform:translateY(0);pointer-events:auto}
+.hw-panel-tag{font:10px var(--mono);letter-spacing:.2em;text-transform:uppercase;color:var(--signal);margin-bottom:12px}
+.hw-panel-title{font-family:'Inter Tight',sans-serif;font-size:clamp(38px,4.5vw,60px);font-weight:800;line-height:.95;letter-spacing:-.05em;margin-bottom:20px}
+.hw-panel-title span{color:var(--brand-sky)}
+.hw-panel-desc{color:rgba(255,255,255,0.5);font-size:16px;line-height:1.75;max-width:600px;margin-bottom:36px}
+
+/* ── DETAIL CARDS ── */
+.hw-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-bottom:32px}
+.hw-card{background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);border-radius:14px;padding:20px 18px;transition:.3s}
+.hw-card:hover{background:rgba(46,125,166,0.08);border-color:rgba(46,125,166,0.25)}
+.hw-card-icon{font-size:22px;margin-bottom:10px}
+.hw-card h4{font-family:'Inter Tight',sans-serif;font-size:15px;font-weight:700;margin-bottom:5px}
+.hw-card p{font-size:12px;color:rgba(255,255,255,0.4);line-height:1.6}
+
+/* ── MOCK TABLE ── */
+.hw-table{border:1px solid rgba(255,255,255,0.08);border-radius:14px;overflow:hidden;background:rgba(0,0,0,0.2);margin-bottom:32px}
+.hw-table-head{display:grid;padding:10px 18px;border-bottom:1px solid rgba(255,255,255,0.07);background:rgba(255,255,255,0.03)}
+.hw-table-head.cols-4{grid-template-columns:2fr 1.2fr 1fr 1fr}
+.hw-table-head.cols-3{grid-template-columns:2fr 1fr 1fr}
+.hw-table-head span{font:9px var(--mono);letter-spacing:.15em;text-transform:uppercase;color:rgba(255,255,255,0.25)}
+.hw-table-row{display:grid;padding:11px 18px;border-bottom:1px solid rgba(255,255,255,0.05);align-items:center;transition:.2s}
+.hw-table-row:last-child{border-bottom:none}
+.hw-table-row:hover{background:rgba(255,255,255,0.03)}
+.hw-table-row.cols-4{grid-template-columns:2fr 1.2fr 1fr 1fr}
+.hw-table-row.cols-3{grid-template-columns:2fr 1fr 1fr}
+.hw-row-name{font-size:13px;font-weight:600;color:rgba(255,255,255,0.85)}
+.hw-row-sub{font:10px var(--mono);color:rgba(255,255,255,0.28);margin-top:2px}
+.hw-row-meta{font:11px var(--mono);color:rgba(255,255,255,0.38)}
+.hw-badge{display:inline-block;padding:3px 9px;border-radius:4px;font:9px var(--mono);letter-spacing:.1em;text-transform:uppercase}
+.hw-badge.edit{background:rgba(255,200,50,0.1);color:#ffc832;border:1px solid rgba(255,200,50,0.2)}
+.hw-badge.review{background:rgba(46,125,166,0.15);color:var(--brand-sky);border:1px solid rgba(46,125,166,0.25)}
+.hw-badge.ready{background:rgba(60,200,120,0.1);color:#3cc878;border:1px solid rgba(60,200,120,0.2)}
+.hw-badge.revision{background:rgba(255,100,80,0.1);color:#ff8070;border:1px solid rgba(255,100,80,0.2)}
+
+/* ── STATUS PILLS ── */
+.hw-status-row{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:32px}
+.hw-status{display:inline-flex;align-items:center;gap:7px;padding:7px 14px;border-radius:999px;font:10px var(--mono);letter-spacing:.08em;text-transform:uppercase;border:1px solid}
+.hw-status-dot{width:6px;height:6px;border-radius:50%;flex-shrink:0}
+.hw-status.s-edit{border-color:rgba(255,200,50,.35);color:rgba(255,200,50,.9)}.hw-status.s-edit .hw-status-dot{background:#ffc832}
+.hw-status.s-review{border-color:rgba(46,125,166,.5);color:var(--brand-sky)}.hw-status.s-review .hw-status-dot{background:var(--brand-sky)}
+.hw-status.s-ready{border-color:rgba(60,200,120,.4);color:rgba(60,200,120,.9)}.hw-status.s-ready .hw-status-dot{background:#3cc878}
+.hw-status.s-revision{border-color:rgba(255,100,80,.4);color:rgba(255,120,100,.9)}.hw-status.s-revision .hw-status-dot{background:#ff6450}
+.hw-status.s-done{border-color:rgba(200,200,200,.18);color:rgba(255,255,255,.45)}.hw-status.s-done .hw-status-dot{background:rgba(255,255,255,.35)}
+
+/* ── FRAME PREVIEW ── */
+.hw-frame{border:1px solid rgba(255,255,255,0.1);border-radius:14px;overflow:hidden;background:#0d1118;margin-bottom:32px}
+.hw-frame-bar{display:flex;align-items:center;gap:10px;padding:10px 16px;background:rgba(255,255,255,0.04);border-bottom:1px solid rgba(255,255,255,0.07)}
+.hw-frame-dots{display:flex;gap:5px}.hw-frame-dots span{width:9px;height:9px;border-radius:50%;background:rgba(255,255,255,0.13)}
+.hw-frame-url{flex:1;background:rgba(255,255,255,0.05);border-radius:5px;padding:4px 10px;font:9px var(--mono);color:rgba(255,255,255,0.28);letter-spacing:.04em}
+.hw-frame-body{display:grid;grid-template-columns:1fr 260px}
+.hw-frame-video{background:linear-gradient(135deg,#0d1520,#1a2535);display:flex;align-items:center;justify-content:center;position:relative;min-height:160px}
+.hw-frame-play{width:46px;height:46px;border-radius:50%;background:rgba(46,125,166,0.7);display:grid;place-items:center;font-size:16px;color:white}
+.hw-frame-tl{position:absolute;bottom:10px;left:14px;right:14px;height:3px;background:rgba(255,255,255,0.12);border-radius:2px}
+.hw-frame-tl-fill{width:38%;height:100%;background:var(--signal);border-radius:2px;position:relative}
+.hw-frame-tl-fill::after{content:"";position:absolute;right:-1px;top:-4px;width:10px;height:10px;border-radius:50%;background:var(--signal);border:2px solid #0d1520}
+.hw-frame-comments{border-left:1px solid rgba(255,255,255,0.07);padding:14px}
+.hw-frame-comments-lbl{font:9px var(--mono);letter-spacing:.15em;text-transform:uppercase;color:rgba(255,255,255,0.28);margin-bottom:12px}
+.hw-comment{padding:9px 10px;border-radius:7px;background:rgba(255,255,255,0.04);margin-bottom:7px;border-left:2px solid var(--signal)}
+.hw-comment-t{font:8px var(--mono);color:var(--brand-sky);margin-bottom:3px}
+.hw-comment-txt{font-size:11px;color:rgba(255,255,255,0.5);line-height:1.45}
+.hw-comment.resolved{border-left-color:rgba(60,200,120,0.45);opacity:.5}
+
+/* ── CTA ── */
+.hw-cta{padding:48px 40px;background:rgba(46,125,166,0.07);border:1px solid rgba(46,125,166,0.16);border-radius:18px;text-align:center;margin:0 5vw 60px}
+.hw-cta h2{font-family:'Inter Tight',sans-serif;font-size:clamp(26px,3.5vw,44px);font-weight:800;letter-spacing:-.04em;margin-bottom:12px}
+.hw-cta p{color:rgba(255,255,255,0.45);font-size:15px;margin-bottom:28px}
+.hw-cta-btn{display:inline-flex;align-items:center;gap:12px;background:var(--signal);color:#fff;border-radius:999px;padding:14px 28px;font:12px var(--mono);letter-spacing:.1em;text-transform:uppercase;transition:.3s}
+.hw-cta-btn:hover{background:#3a8fc0;transform:translateY(-2px)}
+
+/* ── FOOTER ── */
+.hw-footer{padding:36px 5vw 24px;background:#0a0908;border-top:1px solid rgba(255,255,255,0.06);display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:14px}
+.hw-footer img{width:96px;filter:brightness(0) invert(1);opacity:.48}
+.hw-footer-text{font:11px var(--mono);letter-spacing:.08em;color:rgba(255,255,255,0.22);text-transform:uppercase}
+.hw-footer-link{font:11px var(--mono);letter-spacing:.08em;color:rgba(255,255,255,0.38);text-transform:uppercase;border:1px solid rgba(255,255,255,0.1);padding:7px 14px;border-radius:999px;transition:.2s}
+.hw-footer-link:hover{border-color:rgba(255,255,255,0.28);color:#fff}
+
+/* ── MOBILE ── */
+@media(max-width:900px){
+  .hw-nav-links{display:none}
+  .hw-toggle{order:1}
+  .hw-nav-brand{order:2;flex:1;display:flex;justify-content:center}
+  .hw-nav-cta{order:3;display:inline-flex;font-size:10px;padding:10px 14px;gap:8px}
+  .hw-process{grid-template-columns:1fr;border-top:none}
+
+  /* compact sticky tab row */
+  .hw-steps-nav{
+    position:sticky;top:62px;z-index:40;
+    height:auto;padding:10px 16px;
+    border-right:none;border-bottom:1px solid rgba(255,255,255,0.08);
+    background:rgba(20,18,17,0.92);backdrop-filter:blur(20px);
+    flex-direction:row;flex-wrap:nowrap;gap:6px;
+    overflow-x:auto;scrollbar-width:none;justify-content:flex-start;
+  }
+  .hw-steps-nav::-webkit-scrollbar{display:none}
+  .hw-steps-nav-label{display:none}
+
+  /* pill-style tab buttons */
+  .hw-step-btn{
+    flex:0 0 auto;width:auto;
+    flex-direction:row;align-items:center;gap:8px;
+    padding:8px 14px;
+    border:1px solid rgba(255,255,255,0.1);border-radius:999px;
+    border-top:1px solid rgba(255,255,255,0.1)!important;border-bottom:1px solid rgba(255,255,255,0.1)!important;
+  }
+  .hw-step-btn-bar{display:none}
+  .hw-step-btn-info{display:flex;align-items:center;gap:0}
+  .hw-step-btn-tool{display:none}
+  .hw-step-btn-num{font-size:9px;width:auto;color:rgba(255,255,255,0.35)}
+  .hw-step-btn-name{font-size:12px!important;letter-spacing:0}
+  .hw-step-btn.active{background:rgba(46,125,166,0.15);border-color:rgba(46,125,166,0.4)!important;color:#fff}
+  .hw-step-btn.active .hw-step-btn-num{color:var(--signal)}
+
+  /* panels */
+  .hw-panels{overflow:visible}
+  .hw-panel{position:relative;padding:28px 20px 20px;opacity:1;transform:none;display:none}
+  .hw-panel.active{display:block}
+  .hw-panel-title{font-size:clamp(28px,8vw,44px)}
+  .hw-panel-desc{font-size:14px;margin-bottom:24px}
+
+  /* content */
+  .hw-cards{grid-template-columns:1fr 1fr;gap:10px}
+  .hw-card{padding:16px 14px}
+  .hw-card-icon{font-size:18px;margin-bottom:8px}
+  .hw-card h4{font-size:13px}
+  .hw-card p{font-size:11px}
+  .hw-frame-body{grid-template-columns:1fr}
+  .hw-frame-comments{border-left:none;border-top:1px solid rgba(255,255,255,0.07)}
+  .hw-frame-video{min-height:130px}
+  .hw-table{font-size:12px}
+  .hw-row-name{font-size:12px}
+  .hw-status-row{gap:6px;margin-bottom:24px}
+  .hw-status{padding:6px 12px;font-size:9px}
+  .hw-cta{margin:0 16px 40px;padding:32px 22px}
+}
+@media(max-width:600px){
+  .hw-nav{height:62px;top:8px;width:calc(100% - 16px);padding:6px 8px 6px 14px}
+  .hw-nav-brand img{width:72px}
+  .hw-nav-cta{font-size:9px;padding:8px 12px;gap:6px}
+  .hw-hero{padding:100px 20px 36px;min-height:auto}
+  .hw-hero h1{font-size:14vw}
+  .hw-hero p{font-size:13px}
+  .hw-cards{grid-template-columns:1fr 1fr}
+  .hw-table-head.cols-4,.hw-table-row.cols-4{grid-template-columns:1.5fr 1fr}
+  .hw-row-meta:nth-child(2),.hw-table-head span:nth-child(2),.hw-table-head span:nth-child(4),.hw-table-row .hw-row-meta:last-child{display:none}
+}
+
+/* ── MOBILE HAMBURGER ── */
+.hw-toggle{display:none;flex-direction:column;justify-content:center;align-items:center;gap:5px;width:40px;height:40px;border:1px solid rgba(255,255,255,0.28);border-radius:50%;background:rgba(255,255,255,0.07);cursor:pointer;flex-shrink:0}
+.hw-toggle span{width:15px;height:2px;background:rgba(255,255,255,0.88);transition:.3s;display:block}
+.hw-nav.menu-open .hw-toggle span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.hw-nav.menu-open .hw-toggle span:nth-child(2){opacity:0}
+.hw-nav.menu-open .hw-toggle span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+.hw-mob-nav{display:flex;flex-direction:column;gap:4px;position:fixed;z-index:45;top:80px;left:50%;transform:translateX(-50%) translateY(-10px);width:min(94%,1440px);background:rgba(20,18,17,0.94);backdrop-filter:blur(48px);-webkit-backdrop-filter:blur(48px);border:1px solid rgba(255,255,255,0.18);border-radius:22px;box-shadow:0 18px 55px rgba(0,0,0,0.3);padding:12px;opacity:0;pointer-events:none;transition:opacity .28s,transform .28s}
+.hw-nav.menu-open~.hw-mob-nav{opacity:1;pointer-events:auto;transform:translateX(-50%) translateY(0)}
+.hw-mob-nav a{display:block;padding:13px 18px;text-transform:uppercase;font:12px var(--mono);letter-spacing:.1em;color:rgba(255,255,255,0.82);border-radius:12px;transition:.2s}
+.hw-mob-nav a:hover,.hw-mob-nav a.active{background:rgba(255,255,255,0.08);color:#fff}
+.hw-mob-nav a.active{color:var(--brand-sky)}
+.hw-mob-cta{display:flex;align-items:center;justify-content:center;gap:10px;margin-top:6px;padding:13px 18px;background:var(--signal);color:#fff!important;border-radius:12px;font:12px var(--mono)!important;letter-spacing:.08em;text-transform:uppercase;transition:.2s}
+.hw-mob-cta:hover{background:#3a8fc0!important}
+@media(max-width:900px){.hw-toggle{display:flex}}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<header class="hw-nav">
+  <a href="/" class="hw-nav-brand"><img src="/static/images/logo.png" alt="Fix For Ease"></a>
+  <nav class="hw-nav-links">
+    <a href="/ourworks">Our Works</a>
+    <a href="/ourteam">Our Team</a>
+    <a href="/how-it-works" class="active">How It Works</a>
+    <a href="/faq">FAQ</a>
+  </nav>
+  <a href="/#contact" class="hw-nav-cta">Book a Call <span>›</span></a>
+  <button class="hw-toggle" aria-label="Open menu"><span></span><span></span><span></span></button>
+</header>
+<nav class="hw-mob-nav">
+  <a href="/ourworks">Our Works</a>
+  <a href="/ourteam">Our Team</a>
+  <a href="/how-it-works" class="active">How It Works</a>
+  <a href="/faq">FAQ</a>
+  <a href="/#contact" class="hw-mob-cta">Book a Call ›</a>
+</nav>
+
+<!-- HERO -->
+<section class="hw-hero">
+  <div class="hw-hero-eyebrow"><span></span> Our Process</div>
+  <h1>HOW IT<br><em>WORKS</em></h1>
+  <p>Every file has a status. Every revision has a timestamp. Every deadline is visible — to us and to you.</p>
+</section>
+
+<!-- PROCESS -->
+<div class="hw-process">
+
+  <!-- LEFT NAV -->
+  <aside class="hw-steps-nav">
+    <div class="hw-steps-nav-label">The Process</div>
+
+    <button class="hw-step-btn active" data-panel="monday">
+      <div class="hw-step-btn-bar"></div>
+      <span class="hw-step-btn-num">01</span>
+      <div class="hw-step-btn-info">
+        <div class="hw-step-btn-tool">Project Management</div>
+        <div class="hw-step-btn-name">Monday.com</div>
+      </div>
+    </button>
+
+    <button class="hw-step-btn" data-panel="frameio">
+      <div class="hw-step-btn-bar"></div>
+      <span class="hw-step-btn-num">02</span>
+      <div class="hw-step-btn-info">
+        <div class="hw-step-btn-tool">Client Review</div>
+        <div class="hw-step-btn-name">Frame.io</div>
+      </div>
+    </button>
+
+    <button class="hw-step-btn" data-panel="realtime">
+      <div class="hw-step-btn-bar"></div>
+      <span class="hw-step-btn-num">03</span>
+      <div class="hw-step-btn-info">
+        <div class="hw-step-btn-tool">Live Status</div>
+        <div class="hw-step-btn-name">Real-time Tracking</div>
+      </div>
+    </button>
+
+    <button class="hw-step-btn" data-panel="bulk">
+      <div class="hw-step-btn-bar"></div>
+      <span class="hw-step-btn-num">04</span>
+      <div class="hw-step-btn-info">
+        <div class="hw-step-btn-tool">Multi-project View</div>
+        <div class="hw-step-btn-name">Bulk Tracking</div>
+      </div>
+    </button>
+  </aside>
+
+  <!-- RIGHT PANELS -->
+  <div class="hw-panels">
+
+    <!-- Panel 1: Monday.com -->
+    <div class="hw-panel active" id="panel-monday">
+      <div class="hw-panel-tag">01 · Project Management</div>
+      <h2 class="hw-panel-title">Monday<span>.com</span></h2>
+      <p class="hw-panel-desc">Every wedding project lives here from day one. We track every file — which editor has it, what stage it's at, when the deadline is. You get a live view of your entire workload without asking anyone.</p>
+
+      <div class="hw-table">
+        <div class="hw-table-head cols-4">
+          <span>Project / File</span><span>Editor</span><span>Status</span><span>Due</span>
+        </div>
+        <div class="hw-table-row cols-4">
+          <div><div class="hw-row-name">Sarah & James — Highlight</div><div class="hw-row-sub">4K · 8 min target</div></div>
+          <div class="hw-row-meta">Rafiq</div>
+          <div><span class="hw-badge edit">Editing</span></div>
+          <div class="hw-row-meta">Oct 15</div>
+        </div>
+        <div class="hw-table-row cols-4">
+          <div><div class="hw-row-name">Emily & Tom — Full Film</div><div class="hw-row-sub">4K · 25 min target</div></div>
+          <div class="hw-row-meta">Nadia</div>
+          <div><span class="hw-badge review">In Review</span></div>
+          <div class="hw-row-meta">Oct 18</div>
+        </div>
+        <div class="hw-table-row cols-4">
+          <div><div class="hw-row-name">Priya & Arjun — Teaser</div><div class="hw-row-sub">1080p · 90 sec</div></div>
+          <div class="hw-row-meta">Rafiq</div>
+          <div><span class="hw-badge revision">Revision</span></div>
+          <div class="hw-row-meta">Oct 14</div>
+        </div>
+        <div class="hw-table-row cols-4">
+          <div><div class="hw-row-name">Charlotte & Liam — Trailer</div><div class="hw-row-sub">4K · 3 min</div></div>
+          <div class="hw-row-meta">Nadia</div>
+          <div><span class="hw-badge ready">Ready</span></div>
+          <div class="hw-row-meta">Oct 12</div>
+        </div>
+      </div>
+
+      <div class="hw-cards">
+        <div class="hw-card"><div class="hw-card-icon">📋</div><h4>Central File List</h4><p>Every active project in one board — no spreadsheets, no scattered notes.</p></div>
+        <div class="hw-card"><div class="hw-card-icon">👤</div><h4>Editor Assignment</h4><p>Each file is assigned to one editor with a clear deadline and delivery target.</p></div>
+        <div class="hw-card"><div class="hw-card-icon">🔔</div><h4>Deadline Alerts</h4><p>Automatic reminders ensure nothing slips — especially during peak season.</p></div>
+      </div>
+    </div>
+
+    <!-- Panel 2: Frame.io -->
+    <div class="hw-panel" id="panel-frameio">
+      <div class="hw-panel-tag">02 · Client Review</div>
+      <h2 class="hw-panel-title">Frame<span>.io</span></h2>
+      <p class="hw-panel-desc">When a cut is ready, we upload it to Frame.io and share it with you. You watch the video, click on any moment that needs a change, and leave a note — pinned to that exact second. No emails, no "around 2 minutes in."</p>
+
+      <div class="hw-frame">
+        <div class="hw-frame-bar">
+          <div class="hw-frame-dots"><span></span><span></span><span></span></div>
+          <div class="hw-frame-url">app.frame.io / sarah-james-highlight-v2</div>
+        </div>
+        <div class="hw-frame-body">
+          <div class="hw-frame-video">
+            <div class="hw-frame-play">▶</div>
+            <div class="hw-frame-tl"><div class="hw-frame-tl-fill"></div></div>
+          </div>
+          <div class="hw-frame-comments">
+            <div class="hw-frame-comments-lbl">Comments (3)</div>
+            <div class="hw-comment"><div class="hw-comment-t">@ 0:42</div><div class="hw-comment-txt">Can we slow this transition down slightly?</div></div>
+            <div class="hw-comment"><div class="hw-comment-t">@ 1:18</div><div class="hw-comment-txt">Love this shot — keep it longer.</div></div>
+            <div class="hw-comment resolved"><div class="hw-comment-t">@ 2:05 · ✓ Resolved</div><div class="hw-comment-txt">Colour feels too warm here.</div></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="hw-cards">
+        <div class="hw-card"><div class="hw-card-icon">⏱</div><h4>Time-coded Feedback</h4><p>Every comment is pinned to a specific second — no ambiguity, no back and forth.</p></div>
+        <div class="hw-card"><div class="hw-card-icon">✅</div><h4>Revision History</h4><p>V1, V2, V3 — all versions kept. You can compare exactly what changed.</p></div>
+        <div class="hw-card"><div class="hw-card-icon">🔗</div><h4>Share with Anyone</h4><p>Send a link to the couple, venue, or anyone who needs to sign off.</p></div>
+      </div>
+    </div>
+
+    <!-- Panel 3: Real-time -->
+    <div class="hw-panel" id="panel-realtime">
+      <div class="hw-panel-tag">03 · Live Status</div>
+      <h2 class="hw-panel-title">Real-time<br><span>Tracking</span></h2>
+      <p class="hw-panel-desc">At any point you can see exactly what state every file is in. Is it being edited right now? Waiting for your review? Has a revision come back? You don't need to message anyone — the board tells you instantly.</p>
+
+      <div class="hw-status-row">
+        <div class="hw-status s-edit"><span class="hw-status-dot"></span>Editing</div>
+        <div class="hw-status s-review"><span class="hw-status-dot"></span>In Review</div>
+        <div class="hw-status s-revision"><span class="hw-status-dot"></span>Revision Requested</div>
+        <div class="hw-status s-ready"><span class="hw-status-dot"></span>Ready to Deliver</div>
+        <div class="hw-status s-done"><span class="hw-status-dot"></span>Delivered</div>
+      </div>
+
+      <div class="hw-cards">
+        <div class="hw-card"><div class="hw-card-icon">◉</div><h4>Live Status Board</h4><p>File statuses update in real time as editors move work forward.</p></div>
+        <div class="hw-card"><div class="hw-card-icon">🔄</div><h4>Stage Transitions</h4><p>Edit → Review → Revision → Ready — every move is logged with a timestamp.</p></div>
+        <div class="hw-card"><div class="hw-card-icon">📊</div><h4>Progress at a Glance</h4><p>See how many files are in each stage across your entire active workload.</p></div>
+      </div>
+    </div>
+
+    <!-- Panel 4: Bulk -->
+    <div class="hw-panel" id="panel-bulk">
+      <div class="hw-panel-tag">04 · Multi-project View</div>
+      <h2 class="hw-panel-title">Bulk<br><span>Tracking</span></h2>
+      <p class="hw-panel-desc">Wedding season means 10, 20, 30 active projects at once. Bulk tracking lets you see across all of them simultaneously — which couples are overdue, which editors are at capacity, where the next bottleneck is forming.</p>
+
+      <div class="hw-table">
+        <div class="hw-table-head cols-4">
+          <span>Wedding</span><span>Files</span><span>Status</span><span>Due</span>
+        </div>
+        <div class="hw-table-row cols-4">
+          <div><div class="hw-row-name">Sarah & James</div><div class="hw-row-sub">London · Oct 2026</div></div>
+          <div class="hw-row-meta">3 files</div>
+          <div><span class="hw-badge edit">2 Editing</span></div>
+          <div class="hw-row-meta">Oct 20</div>
+        </div>
+        <div class="hw-table-row cols-4">
+          <div><div class="hw-row-name">Priya & Arjun</div><div class="hw-row-sub">Manchester · Sep 2026</div></div>
+          <div class="hw-row-meta">2 files</div>
+          <div><span class="hw-badge review">In Review</span></div>
+          <div class="hw-row-meta">Oct 13</div>
+        </div>
+        <div class="hw-table-row cols-4">
+          <div><div class="hw-row-name">Charlotte & Liam</div><div class="hw-row-sub">Edinburgh · Oct 2026</div></div>
+          <div class="hw-row-meta">4 files</div>
+          <div><span class="hw-badge ready">All Ready</span></div>
+          <div class="hw-row-meta">Oct 12</div>
+        </div>
+        <div class="hw-table-row cols-4">
+          <div><div class="hw-row-name">Maria & Carlos</div><div class="hw-row-sub">Birmingham · Aug 2026</div></div>
+          <div class="hw-row-meta">2 files</div>
+          <div><span class="hw-badge revision">Revision</span></div>
+          <div class="hw-row-meta">Oct 14</div>
+        </div>
+      </div>
+
+      <div class="hw-cards">
+        <div class="hw-card"><div class="hw-card-icon">▦</div><h4>Season Overview</h4><p>All active weddings in one view — no switching between projects for the big picture.</p></div>
+        <div class="hw-card"><div class="hw-card-icon">⚡</div><h4>Bottleneck Detection</h4><p>Spot when too many files pile up at the same stage before it becomes a delay.</p></div>
+        <div class="hw-card"><div class="hw-card-icon">📅</div><h4>Recurring Work</h4><p>Photographers on retainer or repeat clients — tracked separately with their own cadence.</p></div>
+      </div>
+    </div>
+
+  </div><!-- /hw-panels -->
+</div><!-- /hw-process -->
+
+<!-- CTA -->
+<div class="hw-cta">
+  <h2>Ready to hand over the edit?</h2>
+  <p>Book a 20-minute call and we'll walk through your current workload together.</p>
+  <a class="hw-cta-btn" href="/#contact">Book a Call <span>↗</span></a>
+</div>
+
+<!-- FOOTER -->
+<footer class="hw-footer">
+  <a href="/"><img src="/static/images/logo.png" alt="Fix For Ease"></a>
+  <span class="hw-footer-text">© 2026 Fix For Ease</span>
+  <a href="/#contact" class="hw-footer-link">Start a Project ›</a>
+</footer>
+
+<script>
+(function(){
+  // step panel switcher
+  var btns = document.querySelectorAll('.hw-step-btn');
+  var panels = document.querySelectorAll('.hw-panel');
+  function activate(target){
+    btns.forEach(function(b){ b.classList.toggle('active', b.dataset.panel === target); });
+    panels.forEach(function(p){
+      p.classList.toggle('active', p.id === 'panel-' + target);
+    });
+  }
+  btns.forEach(function(btn){
+    btn.addEventListener('click', function(){ activate(btn.dataset.panel); });
+  });
+
+  // hamburger toggle
+  var nav = document.querySelector('.hw-nav');
+  var toggle = document.querySelector('.hw-toggle');
+  var mobNav = document.querySelector('.hw-mob-nav');
+  if(toggle){
+    toggle.addEventListener('click', function(){
+      nav.classList.toggle('menu-open');
+    });
+    document.addEventListener('click', function(e){
+      if(!nav.contains(e.target) && mobNav && !mobNav.contains(e.target)){
+        nav.classList.remove('menu-open');
+      }
+    });
+  }
+})();
+</script>
+
+</body>
+</html>

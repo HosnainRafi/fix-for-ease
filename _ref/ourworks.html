@@ -1,0 +1,945 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Our Works — Fix For Ease</title>
+<meta name="description" content="Portfolio of Fix For Ease — South Asian, Western, Multicultural & Destination Wedding Photography and Videography editing.">
+<link rel="icon" type="image/png" sizes="64x64" href="/static/images/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@300;400;600;800&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --ink:#0e0d0c;--paper:#f3efe8;--charcoal:#141211;--stone:#8a8178;
+  --signal:#2e7da6;--brand-sky:#79aecd;--white:#fff;
+  --mono:'IBM Plex Mono',monospace;
+}
+html{scroll-behavior:smooth;overflow-x:hidden}
+body{background:var(--charcoal);color:var(--white);font-family:'Inter',sans-serif;overflow-x:hidden;min-height:100vh}
+a{color:inherit;text-decoration:none}
+img,video{display:block;max-width:100%}
+
+/* ── NAV ── */
+.ow-nav{position:fixed;z-index:50;top:14px;left:50%;width:min(94%,1440px);height:72px;transform:translateX(-50%);padding:8px 12px 8px 22px;display:flex;align-items:center;justify-content:space-between;background:rgba(255,255,255,0.08);backdrop-filter:blur(64px) saturate(200%) brightness(1.08);-webkit-backdrop-filter:blur(64px) saturate(200%) brightness(1.08);border:1px solid rgba(255,255,255,0.22);border-radius:999px;box-shadow:inset 0 1.5px 0 rgba(255,255,255,0.45),0 8px 40px rgba(0,0,0,0.22);transition:background .35s}
+.ow-nav-brand img{width:90px;height:46px;object-fit:contain}
+.ow-nav-links{display:flex;gap:30px;text-transform:uppercase;font:12px var(--mono);letter-spacing:.1em;color:rgba(255,255,255,0.8)}
+.ow-nav-links a:hover{color:#fff}
+.ow-nav-links a.active{color:#fff;border-bottom:1px solid var(--signal)}
+.ow-nav-cta{display:inline-flex;align-items:center;gap:14px;border-radius:999px;background:rgba(10,9,15,0.88);color:white;border:1px solid rgba(255,255,255,0.15);padding:12px 18px;text-transform:uppercase;font:12px var(--mono);letter-spacing:.08em;transition:.3s}
+.ow-nav-cta:hover{background:var(--signal)}
+
+/* ── HERO ── */
+.ow-hero{min-height:52vh;display:flex;flex-direction:column;justify-content:flex-end;padding:120px 5vw 60px;background:linear-gradient(180deg,rgba(20,18,17,0) 40%,rgba(20,18,17,1) 100%),url('') center/cover;position:relative;overflow:hidden}
+.ow-hero::before{content:"";position:absolute;inset:0;background:radial-gradient(ellipse at 60% 0%,rgba(121,174,205,0.12),transparent 60%)}
+.ow-hero-eyebrow{font:11px var(--mono);letter-spacing:.2em;text-transform:uppercase;color:var(--brand-sky);margin-bottom:18px;display:flex;align-items:center;gap:12px}
+.ow-hero-eyebrow span{width:32px;height:1px;background:var(--brand-sky);display:inline-block}
+.ow-hero h1{font-family:'Inter Tight',sans-serif;font-size:clamp(52px,8vw,120px);font-weight:800;line-height:.88;letter-spacing:-.06em;margin-bottom:20px}
+.ow-hero h1 em{color:transparent;-webkit-text-stroke:1px rgba(255,255,255,0.35);font-style:normal}
+.ow-hero p{color:rgba(255,255,255,0.55);font-size:16px;max-width:480px;line-height:1.6;font-family:'Inter',sans-serif}
+
+/* ── TYPE SWITCH ── */
+.ow-switch-wrap{position:sticky;top:0;z-index:40;background:var(--charcoal);border-bottom:1px solid rgba(255,255,255,0.06)}
+.ow-switch{display:flex;max-width:1440px;margin:0 auto;padding:0 5vw}
+.ow-switch-btn{padding:20px 0;margin-right:40px;font:13px var(--mono);letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,0.38);border:none;background:none;cursor:pointer;border-bottom:2px solid transparent;transition:.25s;position:relative;top:1px}
+.ow-switch-btn.active{color:#fff;border-bottom-color:var(--signal)}
+
+/* ── CONTENT AREA ── */
+.ow-content{max-width:1440px;margin:0 auto;padding:0 5vw 100px}
+
+/* ── CATEGORY TABS ── */
+.ow-cats{display:flex;flex-wrap:wrap;gap:0;margin:32px 0 0;padding-bottom:0;border-bottom:none}
+.ow-cat-btn{padding:10px 18px;margin:0 6px 10px 0;font:10px var(--mono);letter-spacing:.13em;text-transform:uppercase;color:rgba(255,255,255,0.4);border:1px solid rgba(255,255,255,0.1);border-radius:999px;background:transparent;cursor:pointer;transition:.2s;white-space:nowrap}
+.ow-cat-btn:hover{color:#fff;border-color:rgba(255,255,255,0.3)}
+.ow-cat-btn.active{color:#fff;background:rgba(46,125,166,0.18);border-color:var(--signal)}
+.ow-cat-btn .ow-cat-num{color:var(--signal);margin-right:5px;font-size:9px}
+.ow-cats-wrap{margin:32px 0 40px}
+/* ── CATEGORY DROPDOWN (mobile) ── */
+.ow-cat-dropdown-wrap{display:none;margin:28px 0 32px;position:relative}
+.ow-cat-select{width:100%;padding:13px 40px 13px 16px;background:rgba(255,255,255,0.07);border:1px solid rgba(255,255,255,0.18);border-radius:10px;color:#fff;font:11px var(--mono);letter-spacing:.12em;text-transform:uppercase;appearance:none;-webkit-appearance:none;cursor:pointer;outline:none}
+.ow-cat-select option{background:#1a1714;color:#fff}
+.ow-cat-select-arrow{position:absolute;right:14px;top:50%;transform:translateY(-50%);pointer-events:none;color:var(--signal);font-size:14px}
+
+/* ── GRID (video) ── */
+.ow-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.ow-card{position:relative;border-radius:14px;overflow:hidden;background:#1a1714;cursor:pointer;transition:transform .4s cubic-bezier(.16,1,.3,1)}
+.ow-card:hover{transform:translateY(-4px)}
+.ow-card[data-hidden]{display:none}
+
+/* ── REVEAL ANIMATION ── */
+@keyframes itemReveal{from{opacity:0;transform:translateY(-18px)}to{opacity:1;transform:translateY(0)}}
+.ow-photo-item.ph-reveal{animation:itemReveal .45s cubic-bezier(.16,1,.3,1) both}
+.ow-card.vc-reveal{animation:itemReveal .45s cubic-bezier(.16,1,.3,1) both}
+
+/* ── PHOTO MASONRY ── */
+.ow-photo-masonry{columns:3;column-gap:10px}
+.ow-photo-item{break-inside:avoid;margin-bottom:10px;border-radius:10px;overflow:hidden;cursor:pointer;position:relative;background:#111;display:block}
+.ow-photo-item img{width:100%;display:block;transition:transform .55s cubic-bezier(.16,1,.3,1),filter .55s,opacity .4s}
+.ow-photo-item:hover img{transform:scale(1.04);filter:brightness(1.1)}
+.ow-photo-item img.blur-up{filter:blur(4px);transform:scale(1.02);opacity:.9}
+.ow-photo-item img.blur-up.loaded{filter:none;transform:scale(1);opacity:1}
+.ow-photo-item[data-hidden]{display:none}
+.ow-photo-item::after{content:'';position:absolute;inset:0;background:rgba(0,0,0,0);transition:background .3s;border-radius:10px}
+.ow-photo-item:hover::after{background:rgba(0,0,0,0.1)}
+
+/* ── PHOTO LIGHTBOX ── */
+.ow-photo-lb{display:none;position:fixed;inset:0;background:rgba(0,0,0,0.96);z-index:200;align-items:center;justify-content:center;backdrop-filter:blur(12px)}
+.ow-photo-lb.open{display:flex}
+.ow-photo-lb-img{max-width:min(90vw,1300px);max-height:90vh;object-fit:contain;border-radius:6px;box-shadow:0 32px 80px rgba(0,0,0,0.8)}
+.ow-photo-lb-close{position:absolute;top:18px;right:18px;width:44px;height:44px;border-radius:50%;background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.2);color:#fff;font-size:20px;cursor:pointer;display:grid;place-items:center;transition:.2s;z-index:5}
+.ow-photo-lb-close:hover{background:rgba(255,255,255,0.25)}
+.ow-photo-lb-prev,.ow-photo-lb-next{position:absolute;top:50%;transform:translateY(-50%);width:48px;height:48px;border-radius:50%;background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.18);color:#fff;font-size:22px;cursor:pointer;display:grid;place-items:center;transition:.2s;z-index:5}
+.ow-photo-lb-prev{left:14px}
+.ow-photo-lb-next{right:14px}
+.ow-photo-lb-prev:hover,.ow-photo-lb-next:hover{background:rgba(255,255,255,0.22)}
+@media(max-width:620px){.ow-photo-lb-prev{left:6px}.ow-photo-lb-next{right:6px}}
+
+/* video card */
+.ow-video-card .ow-vid-thumb{position:relative;aspect-ratio:16/9;overflow:hidden;background:#111}
+.ow-video-card .ow-vid-thumb img{width:100%;height:100%;object-fit:cover;filter:saturate(.75) brightness(.9);transition:.4s}
+.ow-video-card:hover .ow-vid-thumb img{filter:saturate(1) brightness(1);transform:scale(1.03)}
+.ow-vid-play{position:absolute;inset:0;display:grid;place-items:center;z-index:2}
+.ow-vid-play button{width:56px;height:56px;border-radius:50%;background:var(--signal);border:none;color:#fff;font-size:18px;cursor:pointer;transition:transform .25s,background .25s;display:grid;place-items:center}
+.ow-vid-play button:hover{transform:scale(1.1);background:#fff;color:var(--signal)}
+.ow-vid-duration{position:absolute;bottom:10px;left:12px;font:10px var(--mono);background:rgba(0,0,0,0.65);backdrop-filter:blur(4px);padding:3px 8px;border-radius:3px;color:rgba(255,255,255,0.85);z-index:2}
+.ow-vid-cat-badge{position:absolute;top:10px;left:12px;font:9px var(--mono);letter-spacing:.12em;text-transform:uppercase;color:#fff;background:rgba(46,125,166,0.75);backdrop-filter:blur(6px);padding:3px 9px;border-radius:3px;z-index:2}
+
+/* card info */
+.ow-card-info{padding:10px 14px 12px}
+.ow-card-title{font-family:'Inter Tight',sans-serif;font-size:15px;font-weight:600;color:rgba(255,255,255,0.88);line-height:1.25}
+
+/* show more */
+.ow-show-more-wrap{text-align:center;margin-top:40px}
+.ow-show-more{display:inline-flex;align-items:center;gap:16px;border:1px solid rgba(255,255,255,0.2);padding:14px 28px;border-radius:999px;font:12px var(--mono);letter-spacing:.1em;text-transform:uppercase;background:transparent;color:rgba(255,255,255,0.7);cursor:pointer;transition:.3s}
+.ow-show-more:hover{border-color:var(--signal);color:#fff;background:rgba(232,71,10,0.08)}
+.ow-show-more.hidden{display:none}
+
+/* empty state */
+.ow-empty{grid-column:1/-1;text-align:center;padding:80px 20px;color:rgba(255,255,255,0.25);font:13px var(--mono);letter-spacing:.1em;text-transform:uppercase}
+
+/* video modal */
+.ow-modal-bg{display:none;position:fixed;inset:0;background:rgba(0,0,0,0.92);z-index:200;align-items:center;justify-content:center;padding:16px;backdrop-filter:blur(10px)}
+.ow-modal-bg.open{display:flex}
+.ow-modal{background:#1a1714;border-radius:16px;width:100%;max-width:900px;overflow:hidden;position:relative}
+.ow-modal-close{position:absolute;top:14px;right:14px;z-index:5;width:36px;height:36px;border-radius:50%;background:rgba(0,0,0,0.6);border:none;color:#fff;font-size:18px;cursor:pointer;display:grid;place-items:center}
+.ow-modal-video{aspect-ratio:16/9;width:100%}
+.ow-modal-video iframe{width:100%;height:100%;display:block;border:0}
+.ow-modal-info{padding:18px 22px}
+.ow-modal-info h3{font-family:'Inter Tight',sans-serif;font-size:20px;font-weight:700;color:#fff;margin-bottom:4px}
+.ow-modal-info span{font:11px var(--mono);color:var(--brand-sky);letter-spacing:.1em;text-transform:uppercase}
+/* vertical (9:16) modal */
+.ow-modal.is-vertical{max-width:420px}
+.ow-modal.is-vertical .ow-modal-video{aspect-ratio:9/16}
+@media(max-width:620px){
+  .ow-modal.is-vertical{max-width:100%;height:calc(100vh - 32px);display:flex;flex-direction:column;border-radius:14px}
+  .ow-modal.is-vertical .ow-modal-video{flex:1;aspect-ratio:unset;height:0}
+  .ow-modal.is-vertical .ow-modal-video iframe{height:100%}
+}
+
+/* footer */
+.ow-footer{padding:50px 5vw 28px;background:#0a0908;border-top:1px solid rgba(255,255,255,0.08);display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:20px}
+.ow-footer-logo img{width:120px;filter:brightness(0) invert(1);opacity:.6}
+.ow-footer-text{font:11px var(--mono);letter-spacing:.08em;color:rgba(255,255,255,0.28);text-transform:uppercase}
+.ow-footer-link{font:11px var(--mono);letter-spacing:.08em;color:rgba(255,255,255,0.4);text-transform:uppercase;border:1px solid rgba(255,255,255,0.12);padding:8px 16px;border-radius:999px;transition:.2s}
+.ow-footer-link:hover{border-color:rgba(255,255,255,0.35);color:#fff}
+
+/* mobile nav toggle */
+.ow-nav-toggle{display:none;flex-direction:column;justify-content:center;align-items:center;gap:5px;width:42px;height:42px;border:1px solid rgba(255,255,255,0.3);border-radius:50%;background:rgba(255,255,255,0.08);cursor:pointer}
+.ow-nav-toggle span{width:16px;height:2px;background:rgba(255,255,255,0.9);transition:.3s}
+
+@media(max-width:900px){
+  .ow-grid{grid-template-columns:repeat(2,1fr)}
+  .ow-photo-masonry{columns:2}
+  .ow-nav-links{display:none}
+  .ow-toggle{order:1}
+  .ow-nav-brand{order:2;flex:1;display:flex;justify-content:center}
+  .ow-nav-cta{order:3;display:inline-flex;font-size:10px;padding:10px 14px;gap:8px}
+}
+@media(max-width:620px){
+  .ow-nav{height:62px;top:8px;width:calc(100% - 16px);padding:6px 8px 6px 14px}
+  .ow-nav-brand img{width:72px}
+  .ow-nav-cta{font-size:9px;padding:9px 12px;gap:8px}
+  .ow-hero{padding:100px 20px 50px;min-height:44vh}
+  .ow-hero h1{font-size:14vw}
+  .ow-content{padding:0 20px 80px}
+  .ow-cats{display:none}
+  .ow-cat-dropdown-wrap{display:block}
+  .ow-grid{grid-template-columns:1fr;gap:14px}
+  .ow-photo-masonry{columns:2;column-gap:6px}
+  .ow-photo-item{margin-bottom:6px}
+  .ow-switch-btn{margin-right:24px;font-size:11px}
+}
+
+/* mobile hamburger */
+.ow-toggle{display:none;flex-direction:column;justify-content:center;align-items:center;gap:5px;width:40px;height:40px;border:1px solid rgba(255,255,255,0.28);border-radius:50%;background:rgba(255,255,255,0.07);cursor:pointer;flex-shrink:0}
+.ow-toggle span{width:15px;height:2px;background:rgba(255,255,255,0.88);transition:.3s;display:block}
+.ow-nav.menu-open .ow-toggle span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.ow-nav.menu-open .ow-toggle span:nth-child(2){opacity:0}
+.ow-nav.menu-open .ow-toggle span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+.ow-mob-nav{display:flex;flex-direction:column;gap:4px;position:fixed;z-index:45;top:80px;left:50%;transform:translateX(-50%) translateY(-10px);width:min(94%,1440px);background:rgba(20,18,17,0.94);backdrop-filter:blur(48px);-webkit-backdrop-filter:blur(48px);border:1px solid rgba(255,255,255,0.18);border-radius:22px;box-shadow:0 18px 55px rgba(0,0,0,0.3);padding:12px;opacity:0;pointer-events:none;transition:opacity .28s,transform .28s}
+.ow-nav.menu-open~.ow-mob-nav{opacity:1;pointer-events:auto;transform:translateX(-50%) translateY(0)}
+.ow-mob-nav a{display:block;padding:13px 18px;text-transform:uppercase;font:12px var(--mono);letter-spacing:.1em;color:rgba(255,255,255,0.82);border-radius:12px;transition:.2s}
+.ow-mob-nav a:hover,.ow-mob-nav a.active{background:rgba(255,255,255,0.08);color:#fff}
+.ow-mob-nav a.active{color:#79aecd}
+.ow-mob-cta{display:flex!important;align-items:center;justify-content:center;gap:10px;margin-top:6px!important;padding:13px 18px!important;background:#2e7da6;color:#fff!important;border-radius:12px!important;font:12px var(--mono)!important}
+@media(max-width:900px){.ow-toggle{display:flex}.ow-nav-cta{font-size:9px;padding:8px 12px;}}
+@media(max-width:620px){.ow-nav{height:62px;top:8px;width:calc(100% - 16px)}}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<header class="ow-nav">
+  <a href="/" class="ow-nav-brand"><img src="/static/images/logo.png" alt="Fix For Ease"></a>
+  <nav class="ow-nav-links">
+    <a href="/ourworks" class="active">Our Works</a>
+    <a href="/ourteam">Our Team</a>
+    <a href="/how-it-works">How It Works</a>
+    <a href="/faq">FAQ</a>
+  </nav>
+  <a href="/#contact" class="ow-nav-cta">Book a Call <span>›</span></a>
+  <button class="ow-toggle" aria-label="Open menu"><span></span><span></span><span></span></button>
+</header>
+<nav class="ow-mob-nav">
+  <a href="/ourworks" class="active">Our Works</a>
+  <a href="/ourteam">Our Team</a>
+  <a href="/how-it-works">How It Works</a>
+  <a href="/faq">FAQ</a>
+  <a href="/#contact" class="ow-mob-cta">Book a Call ›</a>
+</nav>
+
+<!-- HERO -->
+<section class="ow-hero">
+  <div class="ow-hero-eyebrow"><span></span> Fix For Ease</div>
+  <h1>OUR<br><em>WORKS</em></h1>
+  <p>Every frame crafted with intention. From South Asian celebrations to intimate elopements — our portfolio of editing work.</p>
+</section>
+
+<!-- TYPE SWITCH -->
+<div class="ow-switch-wrap">
+  <div class="ow-switch">
+    <button class="ow-switch-btn active" data-type="photos" onclick="switchType('photos',this)">Photos</button>
+    <button class="ow-switch-btn" data-type="videos" onclick="switchType('videos',this)">Videos</button>
+  </div>
+</div>
+
+<!-- PHOTOS SECTION -->
+<div id="ow-photos" class="ow-type-section">
+  <div class="ow-content">
+    <div class="ow-cats-wrap">
+    <div class="ow-cats" id="photos-cats">
+      <button class="ow-cat-btn active" data-cat="all" onclick="filterCat('photos','all',this)">All</button>
+      
+      <button class="ow-cat-btn" data-cat="South Asian Weddings" onclick="filterCat('photos','South Asian Weddings',this)">
+        <span class="ow-cat-num">01</span>South Asian Weddings
+      </button>
+      
+      <button class="ow-cat-btn" data-cat="Western Weddings" onclick="filterCat('photos','Western Weddings',this)">
+        <span class="ow-cat-num">02</span>Western Weddings
+      </button>
+      
+      <button class="ow-cat-btn" data-cat="Multicultural Weddings" onclick="filterCat('photos','Multicultural Weddings',this)">
+        <span class="ow-cat-num">03</span>Multicultural Weddings
+      </button>
+      
+      <button class="ow-cat-btn" data-cat="Destination Weddings" onclick="filterCat('photos','Destination Weddings',this)">
+        <span class="ow-cat-num">04</span>Destination Weddings
+      </button>
+      
+      <button class="ow-cat-btn" data-cat="Engagement &amp; Couple Sessions" onclick="filterCat('photos','Engagement &amp; Couple Sessions',this)">
+        <span class="ow-cat-num">05</span>Engagement &amp; Couple Sessions
+      </button>
+      
+      <button class="ow-cat-btn" data-cat="Wedding Details &amp; Reception" onclick="filterCat('photos','Wedding Details &amp; Reception',this)">
+        <span class="ow-cat-num">06</span>Wedding Details &amp; Reception
+      </button>
+      
+    </div>
+    </div>
+    <div class="ow-cat-dropdown-wrap">
+      <select class="ow-cat-select" id="photos-cat-select" onchange="filterCat('photos',this.value,null)">
+        <option value="all">All Categories</option>
+        
+        <option value="South Asian Weddings">01 South Asian Weddings</option>
+        
+        <option value="Western Weddings">02 Western Weddings</option>
+        
+        <option value="Multicultural Weddings">03 Multicultural Weddings</option>
+        
+        <option value="Destination Weddings">04 Destination Weddings</option>
+        
+        <option value="Engagement &amp; Couple Sessions">05 Engagement &amp; Couple Sessions</option>
+        
+        <option value="Wedding Details &amp; Reception">06 Wedding Details &amp; Reception</option>
+        
+      </select>
+      <span class="ow-cat-select-arrow">▾</span>
+    </div>
+    <div class="ow-photo-masonry" id="photos-grid">
+      
+      
+      
+      <div class="ow-photo-item" data-cat="South Asian Weddings"  onclick="openPhotoLb(0)">
+        
+        <img class="blur-up" src="/thumb/5e393c6e492c4df883f9c7fda5122e96.jpg" data-src="/uploads/5e393c6e492c4df883f9c7fda5122e96.jpg" alt="One Last Touch Before the Vows">
+        
+      </div>
+      
+      
+      <div class="ow-photo-item" data-cat="South Asian Weddings"  onclick="openPhotoLb(1)">
+        
+        <img class="blur-up" src="/thumb/e616ba9dafe94446b1b9e5a59d4be1f8.jpg" data-src="/uploads/e616ba9dafe94446b1b9e5a59d4be1f8.jpg" alt="A Promise Made for Life">
+        
+      </div>
+      
+      
+      <div class="ow-photo-item" data-cat="South Asian Weddings"  onclick="openPhotoLb(2)">
+        
+        <img class="blur-up" src="/thumb/1b15087713b7430f8613ea6f50b780e2.jpg" data-src="/uploads/1b15087713b7430f8613ea6f50b780e2.jpg" alt="By Her Side">
+        
+      </div>
+      
+      
+      <div class="ow-photo-item" data-cat="South Asian Weddings"  onclick="openPhotoLb(3)">
+        
+        <img class="blur-up" src="/thumb/694f24a6520c4b298e14f84aa6c4dc77.jpg" data-src="/uploads/694f24a6520c4b298e14f84aa6c4dc77.jpg" alt="The Beginning of Us">
+        
+      </div>
+      
+      
+      <div class="ow-photo-item" data-cat="South Asian Weddings"  onclick="openPhotoLb(4)">
+        
+        <img class="blur-up" src="/thumb/c53c883ff2804b09b0374ac54d3aaba8.jpg" data-src="/uploads/c53c883ff2804b09b0374ac54d3aaba8.jpg" alt="Standing at the Start of Forever">
+        
+      </div>
+      
+      
+      <div class="ow-photo-item" data-cat="South Asian Weddings"  onclick="openPhotoLb(5)">
+        
+        <img class="blur-up" src="/thumb/f4224dc293f24737bfae5e79242cd0f2.jpg" data-src="/uploads/f4224dc293f24737bfae5e79242cd0f2.jpg" alt="Side by Side, Forever">
+        
+      </div>
+      
+      
+      <div class="ow-photo-item" data-cat="South Asian Weddings"  onclick="openPhotoLb(6)">
+        
+        <img class="blur-up" src="/thumb/25592768a0f7482380598366fc63e44a.jpg" data-src="/uploads/25592768a0f7482380598366fc63e44a.jpg" alt="Our Forever Began Here">
+        
+      </div>
+      
+      
+      <div class="ow-photo-item" data-cat="South Asian Weddings"  onclick="openPhotoLb(7)">
+        
+        <img class="blur-up" src="/thumb/7499f8c04d6745778690c15caafcf336.jpg" data-src="/uploads/7499f8c04d6745778690c15caafcf336.jpg" alt="The Ones Beside Her">
+        
+      </div>
+      
+      
+      <div class="ow-photo-item" data-cat="South Asian Weddings"  onclick="openPhotoLb(8)">
+        
+        <img class="blur-up" src="/thumb/3b69bed74db34ea8ac34c55a1d7c8b3d.jpg" data-src="/uploads/3b69bed74db34ea8ac34c55a1d7c8b3d.jpg" alt="The Moment Forever Became Ours">
+        
+      </div>
+      
+      
+      <div class="ow-photo-item" data-cat="South Asian Weddings"  onclick="openPhotoLb(9)">
+        
+        <img class="blur-up" src="/thumb/82b8d4b5e2c64629a2711575df728842.jpg" data-src="/uploads/82b8d4b5e2c64629a2711575df728842.jpg" alt="A Moment Before &#39;I Do&#39;">
+        
+      </div>
+      
+      
+      <div class="ow-photo-item" data-cat="South Asian Weddings"  onclick="openPhotoLb(10)">
+        
+        <img class="blur-up" src="/thumb/7fc6c85a3f9f43979738ebc016b504d0.jpg" data-src="/uploads/7fc6c85a3f9f43979738ebc016b504d0.jpg" alt="A Promise Made for Life">
+        
+      </div>
+      
+    </div>
+    
+  </div>
+</div>
+
+<!-- VIDEOS SECTION -->
+<div id="ow-videos" class="ow-type-section" style="display:none">
+  <div class="ow-content">
+    <div class="ow-cats-wrap">
+    <div class="ow-cats" id="videos-cats">
+      <button class="ow-cat-btn active" data-cat="all" onclick="filterCat('videos','all',this)">All</button>
+      
+      <button class="ow-cat-btn" data-cat="Highlights" onclick="filterCat('videos','Highlights',this)">
+        <span class="ow-cat-num">01</span>Highlights
+      </button>
+      
+      <button class="ow-cat-btn" data-cat="Teaser" onclick="filterCat('videos','Teaser',this)">
+        <span class="ow-cat-num">02</span>Teaser
+      </button>
+      
+      <button class="ow-cat-btn" data-cat="Vertical Film" onclick="filterCat('videos','Vertical Film',this)">
+        <span class="ow-cat-num">03</span>Vertical Film
+      </button>
+      
+      <button class="ow-cat-btn" data-cat="Full Film" onclick="filterCat('videos','Full Film',this)">
+        <span class="ow-cat-num">04</span>Full Film
+      </button>
+      
+    </div>
+    </div>
+    <div class="ow-cat-dropdown-wrap">
+      <select class="ow-cat-select" id="videos-cat-select" onchange="filterCat('videos',this.value,null)">
+        <option value="all">All Categories</option>
+        
+        <option value="Highlights">01 Highlights</option>
+        
+        <option value="Teaser">02 Teaser</option>
+        
+        <option value="Vertical Film">03 Vertical Film</option>
+        
+        <option value="Full Film">04 Full Film</option>
+        
+      </select>
+      <span class="ow-cat-select-arrow">▾</span>
+    </div>
+    <div class="ow-grid" id="videos-grid">
+      
+      
+      
+      <article class="ow-card ow-video-card" data-cat="Highlights"
+        data-embed="https://www.youtube-nocookie.com/embed/sNY_zdNIGbQ?rel=0&amp;modestbranding=1"
+        data-title="Together, From This Day Forward" data-category="Highlights"
+        
+        onclick="openVideo(this)">
+        <div class="ow-vid-thumb">
+          
+          <img src="https://img.youtube.com/vi/sNY_zdNIGbQ/hqdefault.jpg" alt="Together, From This Day Forward" loading="lazy" onerror="this.style.display='none'">
+          
+          <span class="ow-vid-cat-badge">Highlights</span>
+          <div class="ow-vid-play"><button aria-label="Play">▶</button></div>
+          <span class="ow-vid-duration">5–8 min</span>
+          
+        </div>
+        <div class="ow-card-info">
+          <div class="ow-card-title">Together, From This Day Forward</div>
+        </div>
+      </article>
+      
+      
+      <article class="ow-card ow-video-card" data-cat="Vertical Film"
+        data-embed="https://www.youtube-nocookie.com/embed/ZsTZAvCUiJs?rel=0&amp;modestbranding=1"
+        data-title="A Story Only We Could Write" data-category="Vertical Film"
+        
+        onclick="openVideo(this)">
+        <div class="ow-vid-thumb">
+          
+          <img src="https://img.youtube.com/vi/ZsTZAvCUiJs/hqdefault.jpg" alt="A Story Only We Could Write" loading="lazy" onerror="this.style.display='none'">
+          
+          <span class="ow-vid-cat-badge">Vertical Film</span>
+          <div class="ow-vid-play"><button aria-label="Play">▶</button></div>
+          
+          
+        </div>
+        <div class="ow-card-info">
+          <div class="ow-card-title">A Story Only We Could Write</div>
+        </div>
+      </article>
+      
+      
+      <article class="ow-card ow-video-card" data-cat="Highlights"
+        data-embed="https://iframe.mediadelivery.net/embed/772876/8a0f347c-ff5a-4b62-a122-fbe0eea83d90?autoplay=false&amp;preload=true"
+        data-title="Victoria &amp; Tommy Highlight" data-category="Highlights"
+        
+        onclick="openVideo(this)">
+        <div class="ow-vid-thumb">
+          
+          <img src="https://vz-0e2b83a7-459.b-cdn.net/8a0f347c-ff5a-4b62-a122-fbe0eea83d90/thumbnail.jpg" alt="Victoria &amp; Tommy Highlight" loading="lazy" onerror="this.style.display='none'">
+          
+          <span class="ow-vid-cat-badge">Highlights</span>
+          <div class="ow-vid-play"><button aria-label="Play">▶</button></div>
+          <span class="ow-vid-duration">5–8 min</span>
+          
+        </div>
+        <div class="ow-card-info">
+          <div class="ow-card-title">Victoria &amp; Tommy Highlight</div>
+        </div>
+      </article>
+      
+      
+      <article class="ow-card ow-video-card" data-cat="Vertical Film"
+        data-embed="https://iframe.mediadelivery.net/embed/772876/99c98131-9394-4474-b3e2-bdde431edf33?autoplay=false&amp;preload=true"
+        data-title="Getting Ready for Always" data-category="Vertical Film"
+        
+        onclick="openVideo(this)">
+        <div class="ow-vid-thumb">
+          
+          <img src="https://vz-0e2b83a7-459.b-cdn.net/99c98131-9394-4474-b3e2-bdde431edf33/thumbnail.jpg" alt="Getting Ready for Always" loading="lazy" onerror="this.style.display='none'">
+          
+          <span class="ow-vid-cat-badge">Vertical Film</span>
+          <div class="ow-vid-play"><button aria-label="Play">▶</button></div>
+          
+          
+        </div>
+        <div class="ow-card-info">
+          <div class="ow-card-title">Getting Ready for Always</div>
+        </div>
+      </article>
+      
+      
+      <article class="ow-card ow-video-card" data-cat="Vertical Film"
+        data-embed="https://iframe.mediadelivery.net/embed/772876/756d2ab2-8585-4d7e-a289-56e2dc2ffbac?autoplay=false&amp;preload=true"
+        data-title="The Day We Said “I Do”" data-category="Vertical Film"
+        
+        onclick="openVideo(this)">
+        <div class="ow-vid-thumb">
+          
+          <img src="/uploads/4e2d61a313fb4f56a13c7328c34f7d07.jpg" alt="The Day We Said “I Do”" loading="lazy" onerror="this.style.display='none'">
+          
+          <span class="ow-vid-cat-badge">Vertical Film</span>
+          <div class="ow-vid-play"><button aria-label="Play">▶</button></div>
+          
+          
+        </div>
+        <div class="ow-card-info">
+          <div class="ow-card-title">The Day We Said “I Do”</div>
+        </div>
+      </article>
+      
+      
+      <article class="ow-card ow-video-card" data-cat="Vertical Film"
+        data-embed="https://iframe.mediadelivery.net/embed/772876/5ea94f7b-d8d7-47cd-847c-b7f7235d1d98?autoplay=false&amp;preload=true"
+        data-title="A Promise Made for Life" data-category="Vertical Film"
+        
+        onclick="openVideo(this)">
+        <div class="ow-vid-thumb">
+          
+          <img src="https://vz-0e2b83a7-459.b-cdn.net/5ea94f7b-d8d7-47cd-847c-b7f7235d1d98/thumbnail.jpg" alt="A Promise Made for Life" loading="lazy" onerror="this.style.display='none'">
+          
+          <span class="ow-vid-cat-badge">Vertical Film</span>
+          <div class="ow-vid-play"><button aria-label="Play">▶</button></div>
+          
+          
+        </div>
+        <div class="ow-card-info">
+          <div class="ow-card-title">A Promise Made for Life</div>
+        </div>
+      </article>
+      
+      
+      <article class="ow-card ow-video-card" data-cat="Highlights"
+        data-embed="https://www.youtube-nocookie.com/embed/fEHfUJxzxjs?rel=0&amp;modestbranding=1"
+        data-title="The Day We Became Us" data-category="Highlights"
+        data-hidden="1"
+        onclick="openVideo(this)">
+        <div class="ow-vid-thumb">
+          
+          <img src="https://img.youtube.com/vi/fEHfUJxzxjs/hqdefault.jpg" alt="The Day We Became Us" loading="lazy" onerror="this.style.display='none'">
+          
+          <span class="ow-vid-cat-badge">Highlights</span>
+          <div class="ow-vid-play"><button aria-label="Play">▶</button></div>
+          <span class="ow-vid-duration">5–8 min</span>
+          
+        </div>
+        <div class="ow-card-info">
+          <div class="ow-card-title">The Day We Became Us</div>
+        </div>
+      </article>
+      
+      
+      <article class="ow-card ow-video-card" data-cat="Vertical Film"
+        data-embed="https://www.youtube-nocookie.com/embed/NDt4PIugoS4?rel=0&amp;modestbranding=1"
+        data-title="Our Story Starts Here" data-category="Vertical Film"
+        data-hidden="1"
+        onclick="openVideo(this)">
+        <div class="ow-vid-thumb">
+          
+          <img src="https://img.youtube.com/vi/NDt4PIugoS4/hqdefault.jpg" alt="Our Story Starts Here" loading="lazy" onerror="this.style.display='none'">
+          
+          <span class="ow-vid-cat-badge">Vertical Film</span>
+          <div class="ow-vid-play"><button aria-label="Play">▶</button></div>
+          
+          
+        </div>
+        <div class="ow-card-info">
+          <div class="ow-card-title">Our Story Starts Here</div>
+        </div>
+      </article>
+      
+      
+      <article class="ow-card ow-video-card" data-cat="Highlights"
+        data-embed="https://www.youtube-nocookie.com/embed/wJ-O2_NX1cU?rel=0&amp;modestbranding=1"
+        data-title="A Love That Feels Like Forever" data-category="Highlights"
+        data-hidden="1"
+        onclick="openVideo(this)">
+        <div class="ow-vid-thumb">
+          
+          <img src="https://img.youtube.com/vi/wJ-O2_NX1cU/hqdefault.jpg" alt="A Love That Feels Like Forever" loading="lazy" onerror="this.style.display='none'">
+          
+          <span class="ow-vid-cat-badge">Highlights</span>
+          <div class="ow-vid-play"><button aria-label="Play">▶</button></div>
+          <span class="ow-vid-duration">5–8 min</span>
+          
+        </div>
+        <div class="ow-card-info">
+          <div class="ow-card-title">A Love That Feels Like Forever</div>
+        </div>
+      </article>
+      
+      
+      <article class="ow-card ow-video-card" data-cat="Vertical Film"
+        data-embed="https://www.youtube-nocookie.com/embed/V5X8LXya5qg?rel=0&amp;modestbranding=1"
+        data-title="Somewhere Between Now and Forever" data-category="Vertical Film"
+        data-hidden="1"
+        onclick="openVideo(this)">
+        <div class="ow-vid-thumb">
+          
+          <img src="https://img.youtube.com/vi/V5X8LXya5qg/hqdefault.jpg" alt="Somewhere Between Now and Forever" loading="lazy" onerror="this.style.display='none'">
+          
+          <span class="ow-vid-cat-badge">Vertical Film</span>
+          <div class="ow-vid-play"><button aria-label="Play">▶</button></div>
+          
+          
+        </div>
+        <div class="ow-card-info">
+          <div class="ow-card-title">Somewhere Between Now and Forever</div>
+        </div>
+      </article>
+      
+      
+      <article class="ow-card ow-video-card" data-cat="Highlights"
+        data-embed="https://www.youtube-nocookie.com/embed/Ij8NkK7GslM?rel=0&amp;modestbranding=1"
+        data-title="The Start of Something Beautiful" data-category="Highlights"
+        data-hidden="1"
+        onclick="openVideo(this)">
+        <div class="ow-vid-thumb">
+          
+          <img src="https://img.youtube.com/vi/Ij8NkK7GslM/hqdefault.jpg" alt="The Start of Something Beautiful" loading="lazy" onerror="this.style.display='none'">
+          
+          <span class="ow-vid-cat-badge">Highlights</span>
+          <div class="ow-vid-play"><button aria-label="Play">▶</button></div>
+          <span class="ow-vid-duration">5–8 min</span>
+          
+        </div>
+        <div class="ow-card-info">
+          <div class="ow-card-title">The Start of Something Beautiful</div>
+        </div>
+      </article>
+      
+      
+      <article class="ow-card ow-video-card" data-cat="Highlights"
+        data-embed="https://www.youtube-nocookie.com/embed/Tu1LQTVNK1g?rel=0&amp;modestbranding=1"
+        data-title="One Love, One Lifetime" data-category="Highlights"
+        data-hidden="1"
+        onclick="openVideo(this)">
+        <div class="ow-vid-thumb">
+          
+          <img src="https://img.youtube.com/vi/Tu1LQTVNK1g/hqdefault.jpg" alt="One Love, One Lifetime" loading="lazy" onerror="this.style.display='none'">
+          
+          <span class="ow-vid-cat-badge">Highlights</span>
+          <div class="ow-vid-play"><button aria-label="Play">▶</button></div>
+          <span class="ow-vid-duration">5–8 min</span>
+          
+        </div>
+        <div class="ow-card-info">
+          <div class="ow-card-title">One Love, One Lifetime</div>
+        </div>
+      </article>
+      
+      
+      <article class="ow-card ow-video-card" data-cat="Highlights"
+        data-embed="https://www.youtube-nocookie.com/embed/HcLEPj3ExR4?rel=0&amp;modestbranding=1"
+        data-title="We Should Stick Together" data-category="Highlights"
+        data-hidden="1"
+        onclick="openVideo(this)">
+        <div class="ow-vid-thumb">
+          
+          <img src="https://img.youtube.com/vi/HcLEPj3ExR4/hqdefault.jpg" alt="We Should Stick Together" loading="lazy" onerror="this.style.display='none'">
+          
+          <span class="ow-vid-cat-badge">Highlights</span>
+          <div class="ow-vid-play"><button aria-label="Play">▶</button></div>
+          <span class="ow-vid-duration">5–8 min</span>
+          
+        </div>
+        <div class="ow-card-info">
+          <div class="ow-card-title">We Should Stick Together</div>
+        </div>
+      </article>
+      
+      
+      <article class="ow-card ow-video-card" data-cat="Highlights"
+        data-embed="https://www.youtube-nocookie.com/embed/PXRhJTnT33M?rel=0&amp;modestbranding=1"
+        data-title="A Day to Remember, A Love to Cherish" data-category="Highlights"
+        data-hidden="1"
+        onclick="openVideo(this)">
+        <div class="ow-vid-thumb">
+          
+          <img src="https://img.youtube.com/vi/PXRhJTnT33M/hqdefault.jpg" alt="A Day to Remember, A Love to Cherish" loading="lazy" onerror="this.style.display='none'">
+          
+          <span class="ow-vid-cat-badge">Highlights</span>
+          <div class="ow-vid-play"><button aria-label="Play">▶</button></div>
+          <span class="ow-vid-duration">5–8 min</span>
+          
+        </div>
+        <div class="ow-card-info">
+          <div class="ow-card-title">A Day to Remember, A Love to Cherish</div>
+        </div>
+      </article>
+      
+      
+      <article class="ow-card ow-video-card" data-cat="Highlights"
+        data-embed="https://www.youtube-nocookie.com/embed/39bN77TlOKo?rel=0&amp;modestbranding=1"
+        data-title="Love is in the Details" data-category="Highlights"
+        data-hidden="1"
+        onclick="openVideo(this)">
+        <div class="ow-vid-thumb">
+          
+          <img src="https://img.youtube.com/vi/39bN77TlOKo/hqdefault.jpg" alt="Love is in the Details" loading="lazy" onerror="this.style.display='none'">
+          
+          <span class="ow-vid-cat-badge">Highlights</span>
+          <div class="ow-vid-play"><button aria-label="Play">▶</button></div>
+          <span class="ow-vid-duration">5–8 min</span>
+          
+        </div>
+        <div class="ow-card-info">
+          <div class="ow-card-title">Love is in the Details</div>
+        </div>
+      </article>
+      
+      
+      <article class="ow-card ow-video-card" data-cat="Highlights"
+        data-embed="https://www.youtube-nocookie.com/embed/T6DRrnq7rzc?rel=0&amp;modestbranding=1"
+        data-title="Love&#39;s Eternal Promise" data-category="Highlights"
+        data-hidden="1"
+        onclick="openVideo(this)">
+        <div class="ow-vid-thumb">
+          
+          <img src="https://img.youtube.com/vi/T6DRrnq7rzc/hqdefault.jpg" alt="Love&#39;s Eternal Promise" loading="lazy" onerror="this.style.display='none'">
+          
+          <span class="ow-vid-cat-badge">Highlights</span>
+          <div class="ow-vid-play"><button aria-label="Play">▶</button></div>
+          <span class="ow-vid-duration">5–8 min</span>
+          
+        </div>
+        <div class="ow-card-info">
+          <div class="ow-card-title">Love&#39;s Eternal Promise</div>
+        </div>
+      </article>
+      
+      
+      <article class="ow-card ow-video-card" data-cat="Highlights"
+        data-embed="https://www.youtube-nocookie.com/embed/z2sCQUmpr4M?rel=0&amp;modestbranding=1"
+        data-title="Entwined Forever" data-category="Highlights"
+        data-hidden="1"
+        onclick="openVideo(this)">
+        <div class="ow-vid-thumb">
+          
+          <img src="https://img.youtube.com/vi/z2sCQUmpr4M/hqdefault.jpg" alt="Entwined Forever" loading="lazy" onerror="this.style.display='none'">
+          
+          <span class="ow-vid-cat-badge">Highlights</span>
+          <div class="ow-vid-play"><button aria-label="Play">▶</button></div>
+          <span class="ow-vid-duration">5–8 min</span>
+          
+        </div>
+        <div class="ow-card-info">
+          <div class="ow-card-title">Entwined Forever</div>
+        </div>
+      </article>
+      
+    </div>
+    
+    <div class="ow-show-more-wrap">
+      <button class="ow-show-more" id="videos-more" onclick="showMore('videos')">Show More <span id="videos-more-count"></span></button>
+    </div>
+    
+  </div>
+</div>
+
+<!-- VIDEO MODAL -->
+<!-- PHOTO LIGHTBOX -->
+<div class="ow-photo-lb" id="photo-lb" onclick="if(event.target===this)closeLb()">
+  <button class="ow-photo-lb-close" onclick="closeLb()">×</button>
+  <button class="ow-photo-lb-prev" onclick="lbNav(-1)">‹</button>
+  <img class="ow-photo-lb-img" id="lb-img" src="" alt="">
+  <button class="ow-photo-lb-next" onclick="lbNav(1)">›</button>
+</div>
+
+<div class="ow-modal-bg" id="vid-modal" onclick="if(event.target===this)closeModal()">
+  <div class="ow-modal">
+    <button class="ow-modal-close" onclick="closeModal()">×</button>
+    <div class="ow-modal-video"><iframe id="modal-iframe" src="" allow="autoplay; fullscreen" allowfullscreen></iframe></div>
+    <div class="ow-modal-info">
+      <h3 id="modal-title"></h3>
+      <span id="modal-cat"></span>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer class="ow-footer">
+  <a href="/"><img src="/static/images/logo.png" alt="Fix For Ease" class="ow-footer-logo" style="width:120px;filter:brightness(0) invert(1);opacity:.55"></a>
+  <span class="ow-footer-text">© 2026 Fix For Ease</span>
+  <a href="/#contact" class="ow-footer-link">Start a Project ›</a>
+</footer>
+
+<script src="https://www.youtube.com/iframe_api" async></script>
+<script src="https://player.vimeo.com/api/player.js" async></script>
+<script>
+// ── TYPE SWITCH ──
+function switchType(type, btn){
+  document.querySelectorAll('.ow-type-section').forEach(s=>s.style.display='none');
+  document.querySelectorAll('.ow-switch-btn').forEach(b=>b.classList.remove('active'));
+  document.getElementById('ow-'+type).style.display='block';
+  btn.classList.add('active');
+}
+
+// ── CATEGORY FILTER ──
+function filterCat(type, cat, btn){
+  var grid = document.getElementById(type+'-grid');
+  var isPhoto = (type === 'photos');
+  var cards = grid.querySelectorAll('[data-cat]');
+  var moreBtn = document.getElementById(type+'-more');
+  var limit = isPhoto ? 12 : 6;
+
+  cards.forEach(function(c){ c.removeAttribute('data-hidden'); c.style.display=''; });
+
+  var visible = 0;
+  cards.forEach(function(c){
+    var match = cat === 'all' || c.dataset.cat === cat;
+    if(!match){ c.style.display='none'; }
+    else { visible++; if(visible > limit) c.setAttribute('data-hidden','1'); }
+  });
+  cards.forEach(function(c){ if(c.hasAttribute('data-hidden')) c.style.display='none'; });
+
+  // reveal animation
+  var revealClass = isPhoto ? 'ph-reveal' : 'vc-reveal';
+  var revealSel = isPhoto ? '.ow-photo-item:not([data-hidden]):not([style*="none"])' : '.ow-card:not([data-hidden]):not([style*="none"])';
+  var revealed = Array.from(grid.querySelectorAll(revealSel));
+  revealed.forEach(function(c,i){
+    c.classList.remove(revealClass);
+    void c.offsetWidth;
+    c.style.animationDelay = (i * 40)+'ms';
+    c.classList.add(revealClass);
+  });
+
+  var catWrap = document.getElementById(type+'-cats');
+  catWrap.querySelectorAll('.ow-cat-btn').forEach(b=>b.classList.remove('active'));
+  if(btn) btn.classList.add('active');
+  else { catWrap.querySelectorAll('.ow-cat-btn').forEach(function(b){ if(b.dataset.cat===cat) b.classList.add('active'); }); }
+  var sel = document.getElementById(type+'-cat-select');
+  if(sel) sel.value = cat;
+
+  if(moreBtn){
+    var hiddenCount = grid.querySelectorAll('[data-hidden]').length;
+    if(hiddenCount > 0){ moreBtn.style.display=''; }
+    else{ moreBtn.style.display='none'; }
+  }
+}
+
+// ── SHOW MORE ──
+function showMore(type){
+  var grid = document.getElementById(type+'-grid');
+  var hidden = Array.from(grid.querySelectorAll('[data-hidden]'));
+  var batch = type === 'photos' ? 12 : 6;
+  hidden.slice(0, batch).forEach(function(c){ c.removeAttribute('data-hidden'); c.style.display=''; });
+  if(grid.querySelectorAll('[data-hidden]').length === 0){
+    var btn = document.getElementById(type+'-more');
+    if(btn) btn.style.display='none';
+  }
+}
+
+// ── PHOTO LIGHTBOX ──
+var _lbPhotos = [], _lbIdx = 0;
+function openPhotoLb(idx){
+  var grid = document.getElementById('photos-grid');
+  _lbPhotos = Array.from(grid.querySelectorAll('.ow-photo-item:not([data-hidden]):not([style*="none"]) img')).map(function(i){ return i.dataset.src || i.src; });
+  // remap idx since hidden items may shift
+  var allItems = Array.from(grid.querySelectorAll('.ow-photo-item'));
+  var visibleItems = Array.from(grid.querySelectorAll('.ow-photo-item:not([data-hidden]):not([style*="none"])'));
+  var item = allItems[idx];
+  _lbIdx = visibleItems.indexOf(item);
+  if(_lbIdx < 0) _lbIdx = 0;
+  document.getElementById('lb-img').src = _lbPhotos[_lbIdx];
+  document.getElementById('photo-lb').classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+function lbNav(dir){
+  _lbIdx = (_lbIdx + dir + _lbPhotos.length) % _lbPhotos.length;
+  document.getElementById('lb-img').src = _lbPhotos[_lbIdx];
+}
+function closeLb(){
+  document.getElementById('photo-lb').classList.remove('open');
+  document.body.style.overflow = '';
+}
+
+// ── VIDEO MODAL ──
+function openVideo(card){
+  var src = card.dataset.embed;
+  if(!src) return;
+  var autoSrc = src + (src.indexOf('?')>-1 ? '&' : '?') + 'autoplay=1';
+  document.getElementById('modal-iframe').src = autoSrc;
+  document.getElementById('modal-title').textContent = card.dataset.title;
+  document.getElementById('modal-cat').textContent = card.dataset.category;
+  var modal = document.querySelector('.ow-modal');
+  if(card.dataset.category === 'Vertical Film') modal.classList.add('is-vertical');
+  else modal.classList.remove('is-vertical');
+  document.getElementById('vid-modal').classList.add('open');
+}
+function closeModal(){
+  document.getElementById('vid-modal').classList.remove('open');
+  document.getElementById('modal-iframe').src = '';
+}
+document.addEventListener('keydown',function(e){
+  if(e.key==='Escape'){ closeModal(); closeLb(); }
+  if(e.key==='ArrowLeft') lbNav(-1);
+  if(e.key==='ArrowRight') lbNav(1);
+});
+
+// init show-more counts
+['photos','videos'].forEach(function(type){
+  var btn = document.getElementById(type+'-more');
+  if(!btn) return;
+  var grid = document.getElementById(type+'-grid');
+  var count = grid ? grid.querySelectorAll('[data-hidden]').length : 0;
+  if(count === 0){ btn.style.display='none'; }
+});
+</script>
+<script>
+(function(){
+  var nav=document.querySelector('.ow-nav');
+  var toggle=document.querySelector('.ow-toggle');
+  var mob=document.querySelector('.ow-mob-nav');
+  if(!toggle)return;
+  toggle.addEventListener('click',function(){nav.classList.toggle('menu-open');});
+  document.addEventListener('click',function(e){if(!nav.contains(e.target)&&mob&&!mob.contains(e.target))nav.classList.remove('menu-open');});
+})();
+</script>
+<script>
+// blur-up LQIP loader
+(function(){
+  if(!('IntersectionObserver' in window)) {
+    // fallback: just load full images immediately
+    document.querySelectorAll('img.blur-up[data-src]').forEach(function(img){
+      img.src = img.dataset.src;
+      img.classList.add('loaded');
+    });
+    return;
+  }
+  var observer = new IntersectionObserver(function(entries){
+    entries.forEach(function(entry){
+      if(!entry.isIntersecting) return;
+      var img = entry.target;
+      var full = new Image();
+      full.onload = function(){
+        img.src = img.dataset.src;
+        img.classList.add('loaded');
+      };
+      full.src = img.dataset.src;
+      observer.unobserve(img);
+    });
+  }, { rootMargin: '300px 0px' });
+
+  document.querySelectorAll('img.blur-up[data-src]').forEach(function(img){
+    observer.observe(img);
+  });
+})();
+</script>
+</body>
+</html>

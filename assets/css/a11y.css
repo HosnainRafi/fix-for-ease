@@ -1,0 +1,21 @@
+/* Additive accessibility layer — does not alter the reference design at rest. */
+.skip-link {
+  position: fixed;
+  top: 10px;
+  left: 10px;
+  z-index: 999;
+  padding: 12px 18px;
+  border-radius: 999px;
+  background: #0b0a09;
+  color: #fff;
+  font: 12px 'IBM Plex Mono', monospace;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  transform: translateY(-160%);
+  transition: transform .2s ease;
+}
+.skip-link:focus-visible { transform: none; }
+
+:focus-visible { outline: 2px solid currentColor; outline-offset: 3px; }
+
+[hidden] { display: none !important; }

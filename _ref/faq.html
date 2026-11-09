@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FAQ — Fix For Ease</title>
+<meta name="description" content="Answers to your most common questions about working with Fix For Ease — process, revisions, style matching and capacity.">
+<link rel="icon" type="image/png" sizes="64x64" href="/static/images/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@300;400;600;800&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --ink:#0e0d0c;--paper:#f3efe8;--charcoal:#141211;--stone:#8a8178;
+  --signal:#2e7da6;--brand-sky:#79aecd;--white:#fff;
+  --mono:'IBM Plex Mono',monospace;
+}
+html{scroll-behavior:smooth;overflow-x:hidden}
+body{background:var(--charcoal);color:var(--white);font-family:'Inter',sans-serif;overflow-x:hidden;min-height:100vh}
+a{color:inherit;text-decoration:none}
+img{display:block;max-width:100%}
+
+/* ── NAV ── */
+.fq-nav{position:fixed;z-index:50;top:14px;left:50%;width:min(94%,1440px);height:72px;transform:translateX(-50%);padding:8px 12px 8px 22px;display:flex;align-items:center;justify-content:space-between;background:rgba(255,255,255,0.08);backdrop-filter:blur(64px) saturate(200%) brightness(1.08);-webkit-backdrop-filter:blur(64px) saturate(200%) brightness(1.08);border:1px solid rgba(255,255,255,0.22);border-radius:999px;box-shadow:inset 0 1.5px 0 rgba(255,255,255,0.45),0 8px 40px rgba(0,0,0,0.22)}
+.fq-nav-brand img{width:90px;height:46px;object-fit:contain}
+.fq-nav-links{display:flex;gap:30px;text-transform:uppercase;font:12px var(--mono);letter-spacing:.1em;color:rgba(255,255,255,0.8)}
+.fq-nav-links a:hover{color:#fff}
+.fq-nav-links a.active{color:#fff;border-bottom:1px solid var(--signal)}
+.fq-nav-cta{display:inline-flex;align-items:center;gap:14px;border-radius:999px;background:rgba(10,9,15,0.88);color:white;border:1px solid rgba(255,255,255,0.15);padding:12px 18px;text-transform:uppercase;font:12px var(--mono);letter-spacing:.08em;transition:.3s}
+.fq-nav-cta:hover{background:var(--signal)}
+
+/* ── HERO ── */
+.fq-hero{min-height:46vh;display:flex;flex-direction:column;justify-content:flex-end;padding:130px 5vw 64px;position:relative;overflow:hidden;background:linear-gradient(160deg,#0a0d12 0%,var(--charcoal) 100%)}
+.fq-hero::before{content:"";position:absolute;inset:0;background:radial-gradient(ellipse at 30% 0%,rgba(46,125,166,0.14),transparent 55%)}
+.fq-hero-eyebrow{font:11px var(--mono);letter-spacing:.2em;text-transform:uppercase;color:var(--brand-sky);margin-bottom:18px;display:flex;align-items:center;gap:12px}
+.fq-hero-eyebrow span{width:32px;height:1px;background:var(--brand-sky);display:inline-block}
+.fq-hero h1{font-family:'Inter Tight',sans-serif;font-size:clamp(52px,8vw,120px);font-weight:800;line-height:.88;letter-spacing:-.06em;margin-bottom:24px}
+.fq-hero h1 em{color:transparent;-webkit-text-stroke:1px rgba(255,255,255,0.35);font-style:normal}
+.fq-hero p{color:rgba(255,255,255,0.5);font-size:16px;max-width:520px;line-height:1.65}
+
+/* ── FAQ LIST ── */
+.fq-body{max-width:860px;margin:0 auto;padding:80px 5vw 120px}
+.fq-list{border-top:1px solid rgba(255,255,255,0.08)}
+.fq-list details{border-bottom:1px solid rgba(255,255,255,0.08)}
+.fq-list summary{min-height:80px;display:grid;grid-template-columns:52px 1fr 36px;align-items:center;cursor:pointer;font-size:20px;font-family:'Inter Tight',sans-serif;font-weight:600;list-style:none;padding:8px 0;gap:0;color:rgba(255,255,255,0.88);transition:color .2s}
+.fq-list summary::-webkit-details-marker{display:none}
+.fq-list summary:hover{color:#fff}
+.fq-list summary .fq-num{font:11px var(--mono);color:var(--signal);letter-spacing:.1em}
+.fq-list summary .fq-icon{font-style:normal;font-size:26px;color:rgba(255,255,255,0.35);transition:transform .3s,color .3s;justify-self:end}
+.fq-list details[open] summary .fq-icon{transform:rotate(45deg);color:var(--signal)}
+.fq-list details[open] summary{color:#fff}
+.fq-answer{padding:0 0 28px 52px;color:rgba(255,255,255,0.55);line-height:1.75;font-size:16px;max-width:680px}
+
+/* ── CTA ── */
+.fq-cta{margin-top:64px;padding:52px 40px;background:rgba(46,125,166,0.08);border:1px solid rgba(46,125,166,0.2);border-radius:20px;text-align:center}
+.fq-cta h2{font-family:'Inter Tight',sans-serif;font-size:clamp(28px,4vw,48px);font-weight:800;letter-spacing:-.04em;margin-bottom:14px}
+.fq-cta p{color:rgba(255,255,255,0.5);font-size:16px;margin-bottom:32px}
+.fq-cta-btn{display:inline-flex;align-items:center;gap:12px;background:var(--signal);color:#fff;border-radius:999px;padding:16px 32px;font:13px var(--mono);letter-spacing:.1em;text-transform:uppercase;transition:.3s}
+.fq-cta-btn:hover{background:#3a8fc0;transform:translateY(-2px)}
+
+/* ── FOOTER ── */
+.fq-footer{padding:40px 5vw 28px;background:#0a0908;border-top:1px solid rgba(255,255,255,0.06);display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:16px}
+.fq-footer img{width:100px;filter:brightness(0) invert(1);opacity:.5}
+.fq-footer-text{font:11px var(--mono);letter-spacing:.08em;color:rgba(255,255,255,0.25);text-transform:uppercase}
+.fq-footer-link{font:11px var(--mono);letter-spacing:.08em;color:rgba(255,255,255,0.4);text-transform:uppercase;border:1px solid rgba(255,255,255,0.1);padding:8px 16px;border-radius:999px;transition:.2s}
+.fq-footer-link:hover{border-color:rgba(255,255,255,0.3);color:#fff}
+
+@media(max-width:900px){.fq-nav-links{display:none}
+  .fq-toggle{order:1}
+  .fq-nav-brand{order:2;flex:1;display:flex;justify-content:center}
+  .fq-nav-cta{order:3;display:inline-flex;font-size:10px;padding:10px 14px;gap:8px}}
+@media(max-width:620px){
+  .fq-nav{height:62px;top:8px;width:calc(100% - 16px);padding:6px 8px 6px 14px}
+  .fq-nav-brand img{width:72px}
+  .fq-hero{padding:100px 20px 48px;min-height:38vh}
+  .fq-body{padding:56px 20px 80px}
+  .fq-list summary{font-size:16px;min-height:64px;grid-template-columns:40px 1fr 28px}
+  .fq-answer{padding-left:40px;font-size:15px}
+  .fq-cta{padding:36px 24px}
+  .fq-footer{flex-direction:column;align-items:flex-start}
+}
+
+/* mobile hamburger */
+.fq-toggle{display:none;flex-direction:column;justify-content:center;align-items:center;gap:5px;width:40px;height:40px;border:1px solid rgba(255,255,255,0.28);border-radius:50%;background:rgba(255,255,255,0.07);cursor:pointer;flex-shrink:0}
+.fq-toggle span{width:15px;height:2px;background:rgba(255,255,255,0.88);transition:.3s;display:block}
+.fq-nav.menu-open .fq-toggle span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.fq-nav.menu-open .fq-toggle span:nth-child(2){opacity:0}
+.fq-nav.menu-open .fq-toggle span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+.fq-mob-nav{display:flex;flex-direction:column;gap:4px;position:fixed;z-index:45;top:80px;left:50%;transform:translateX(-50%) translateY(-10px);width:min(94%,1440px);background:rgba(20,18,17,0.94);backdrop-filter:blur(48px);-webkit-backdrop-filter:blur(48px);border:1px solid rgba(255,255,255,0.18);border-radius:22px;box-shadow:0 18px 55px rgba(0,0,0,0.3);padding:12px;opacity:0;pointer-events:none;transition:opacity .28s,transform .28s}
+.fq-nav.menu-open~.fq-mob-nav{opacity:1;pointer-events:auto;transform:translateX(-50%) translateY(0)}
+.fq-mob-nav a{display:block;padding:13px 18px;text-transform:uppercase;font:12px var(--mono);letter-spacing:.1em;color:rgba(255,255,255,0.82);border-radius:12px;transition:.2s}
+.fq-mob-nav a:hover,.fq-mob-nav a.active{background:rgba(255,255,255,0.08);color:#fff}
+.fq-mob-nav a.active{color:#79aecd}
+.fq-mob-cta{display:flex!important;align-items:center;justify-content:center;gap:10px;margin-top:6px!important;padding:13px 18px!important;background:#2e7da6;color:#fff!important;border-radius:12px!important;font:12px var(--mono)!important}
+@media(max-width:900px){.fq-toggle{display:flex}.fq-nav-cta{font-size:9px;padding:8px 12px;}}
+@media(max-width:620px){.fq-nav{height:62px;top:8px;width:calc(100% - 16px)}}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<header class="fq-nav">
+  <a href="/" class="fq-nav-brand"><img src="/static/images/logo.png" alt="Fix For Ease"></a>
+  <nav class="fq-nav-links">
+    <a href="/ourworks">Our Works</a>
+    <a href="/ourteam">Our Team</a>
+    <a href="/how-it-works">How It Works</a>
+    <a href="/faq" class="active">FAQ</a>
+  </nav>
+  <a href="/#contact" class="fq-nav-cta">Book a Call <span>›</span></a>
+  <button class="fq-toggle" aria-label="Open menu"><span></span><span></span><span></span></button>
+</header>
+<nav class="fq-mob-nav">
+  <a href="/ourworks">Our Works</a>
+  <a href="/ourteam">Our Team</a>
+  <a href="/how-it-works">How It Works</a>
+  <a href="/faq" class="active">FAQ</a>
+  <a href="/#contact" class="fq-mob-cta">Book a Call ›</a>
+</nav>
+
+<!-- HERO -->
+<section class="fq-hero">
+  <div class="fq-hero-eyebrow"><span></span> Fix For Ease</div>
+  <h1>COMMON<br><em>QUESTIONS</em></h1>
+  <p>Everything you need to know about our process, turnaround, style matching and how we work together.</p>
+</section>
+
+<!-- FAQ -->
+<div class="fq-body">
+  <div class="fq-list">
+    
+      
+      <details>
+        <summary>
+          <span class="fq-num">01</span>
+          What kind of projects can you handle?
+          <i class="fq-icon">+</i>
+        </summary>
+        <p class="fq-answer">We work across wedding films, photo retouching and social reels. From single-day elopements to full multi-day celebration shoots, we scale to your volume.</p>
+      </details>
+      
+      <details>
+        <summary>
+          <span class="fq-num">02</span>
+          How do you match our editing style?
+          <i class="fq-icon">+</i>
+        </summary>
+        <p class="fq-answer">We start with a style brief and your reference material. After the first batch we run a detailed QC pass together, fine-tune based on your notes, and build a style guide that travels with every future project.</p>
+      </details>
+      
+      <details>
+        <summary>
+          <span class="fq-num">03</span>
+          How are revisions managed?
+          <i class="fq-icon">+</i>
+        </summary>
+        <p class="fq-answer">All revision feedback is collected through Frame.io with frame-accurate comments. You get a defined revision round per project scope — no chasing, no email threads.</p>
+      </details>
+      
+      <details>
+        <summary>
+          <span class="fq-num">04</span>
+          Can you support a full wedding season?
+          <i class="fq-icon">+</i>
+        </summary>
+        <p class="fq-answer">Yes. We&#39;re built for studios that shoot 30–100+ weddings per year. Our bulk tracking system keeps every project visible and moving.</p>
+      </details>
+      
+      <details>
+        <summary>
+          <span class="fq-num">05</span>
+          What&#39;s your typical turnaround time?
+          <i class="fq-icon">+</i>
+        </summary>
+        <p class="fq-answer">Most wedding films and photo galleries are delivered within 2-3 weeks, with rush options available for tighter deadlines. Reels and social content typically turn around within 3-5 business days.</p>
+      </details>
+      
+      <details>
+        <summary>
+          <span class="fq-num">06</span>
+          How is pricing structured?
+          <i class="fq-icon">+</i>
+        </summary>
+        <p class="fq-answer">We price per project based on volume and service mix—editing, retouching, or full post-production support. Get in touch for a custom quote tailored to your studio&#39;s workflow.</p>
+      </details>
+      
+      <details>
+        <summary>
+          <span class="fq-num">07</span>
+          What file formats do you deliver?
+          <i class="fq-icon">+</i>
+        </summary>
+        <p class="fq-answer">Final films are delivered in your preferred format (MP4, ProRes, etc.) at up to 4K resolution. Photos are delivered as high-res JPEGs or RAW-edited TIFFs, organized and ready for client galleries.</p>
+      </details>
+      
+      <details>
+        <summary>
+          <span class="fq-num">08</span>
+          Is our footage and client data secure?
+          <i class="fq-icon">+</i>
+        </summary>
+        <p class="fq-answer">Yes. All project files are handled under NDA, with access limited to your assigned editing team and transferred through encrypted, password-protected channels.</p>
+      </details>
+      
+      <details>
+        <summary>
+          <span class="fq-num">09</span>
+          How do we get started?
+          <i class="fq-icon">+</i>
+        </summary>
+        <p class="fq-answer">Book a quick onboarding call where we review your workflow, volume and style preferences. Once scoped, you can send your first project and we begin editing within days.</p>
+      </details>
+      
+      <details>
+        <summary>
+          <span class="fq-num">10</span>
+          How much notice do you need?
+          <i class="fq-icon">+</i>
+        </summary>
+        <p class="fq-answer">None at all. Just reach out, brief us on the project, and hand over the footage — we&#39;ll get started from there.</p>
+      </details>
+      
+      <details>
+        <summary>
+          <span class="fq-num">11</span>
+          Will the couple notice?
+          <i class="fq-icon">+</i>
+        </summary>
+        <p class="fq-answer">No. We work entirely in the background. The finished film goes to your studio under your brand — your clients will never know we were involved.</p>
+      </details>
+      
+      <details>
+        <summary>
+          <span class="fq-num">12</span>
+          What happens if I cancel?
+          <i class="fq-icon">+</i>
+        </summary>
+        <p class="fq-answer">If the edit hasn&#39;t started, you won&#39;t be charged. If we&#39;ve already begun working through the footage, a fee applies to cover the time spent. Either way, just let us know.</p>
+      </details>
+      
+      <details>
+        <summary>
+          <span class="fq-num">13</span>
+          How do I send footage?
+          <i class="fq-icon">+</i>
+        </summary>
+        <p class="fq-answer">Google Drive or Dropbox. Share the folder link and we&#39;ll take it from there.</p>
+      </details>
+      
+      <details>
+        <summary>
+          <span class="fq-num">14</span>
+          What software do you use?
+          <i class="fq-icon">+</i>
+        </summary>
+        <p class="fq-answer">Premiere Pro, Final Cut Pro, DaVinci Resolve, After Effects, CapCut, Lightroom, and Photoshop — whatever fits your project and preferred delivery format.</p>
+      </details>
+      
+      <details>
+        <summary>
+          <span class="fq-num">15</span>
+          Do you work internationally?
+          <i class="fq-icon">+</i>
+        </summary>
+        <p class="fq-answer">Yes. We work with studios across the UK, Europe, Australia, the US, and beyond. Everything is handled remotely so location is never a barrier.</p>
+      </details>
+      
+      <details>
+        <summary>
+          <span class="fq-num">16</span>
+          What kinds of weddings do you edit?
+          <i class="fq-icon">+</i>
+        </summary>
+        <p class="fq-answer">All of them. South Asian, Western, multicultural, destination — all styles, all cultures, all faiths. If you filmed it, we can cut it.</p>
+      </details>
+      
+    
+  </div>
+
+  <div class="fq-cta">
+    <h2>Still have questions?</h2>
+    <p>Book a quick call and we'll walk you through everything before we start.</p>
+    <a class="fq-cta-btn" href="/#contact">Book a Call <span>↗</span></a>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer class="fq-footer">
+  <a href="/"><img src="/static/images/logo.png" alt="Fix For Ease"></a>
+  <span class="fq-footer-text">© 2026 Fix For Ease</span>
+  <a href="/#contact" class="fq-footer-link">Start a Project ›</a>
+</footer>
+
+<script>
+(function(){
+  var nav=document.querySelector('.fq-nav');
+  var toggle=document.querySelector('.fq-toggle');
+  var mob=document.querySelector('.fq-mob-nav');
+  if(!toggle)return;
+  toggle.addEventListener('click',function(){nav.classList.toggle('menu-open');});
+  document.addEventListener('click',function(e){if(!nav.contains(e.target)&&mob&&!mob.contains(e.target))nav.classList.remove('menu-open');});
+})();
+</script>
+</body>
+</html>
